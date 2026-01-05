@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dr62q8nnh4ymu"
+path="res://.godot/imported/10120_LCD_Computer_Monitor_v01_max2011_it2.obj-0bbf6870cbff7a1ff39d9744cd82c2a4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/10120_LCD_Computer_Monitor_v01_max2011_it2.obj-0bbf6870cbff7a1ff39d9744cd82c2a4.mesh"]
+
+source_file="res://Assets/LaptopAndMockup/10120_LCD_Computer_Monitor_v01_max2011_it2.obj"
+dest_files=["res://.godot/imported/10120_LCD_Computer_Monitor_v01_max2011_it2.obj-0bbf6870cbff7a1ff39d9744cd82c2a4.mesh", "res://.godot/imported/10120_LCD_Computer_Monitor_v01_max2011_it2.obj-0bbf6870cbff7a1ff39d9744cd82c2a4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

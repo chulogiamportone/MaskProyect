@@ -1,0 +1,232 @@
+[gd_scene load_steps=36 format=3 uid="uid://dsvg57rymw8ir"]
+
+[ext_resource type="ArrayMesh" uid="uid://csbrnxghxgl5t" path="res://Assets/Buildings/OBJ format/building-a.obj" id="1_lrjei"]
+[ext_resource type="ArrayMesh" uid="uid://dp0aijxc2rqlw" path="res://Assets/Buildings/OBJ format/low-detail-building-wide-b.obj" id="2_5d3jg"]
+[ext_resource type="Script" uid="uid://dksp3nmy2i2dj" path="res://ScenesAndScipts/Scipts/building_collision.gd" id="2_ke6xc"]
+[ext_resource type="ArrayMesh" uid="uid://cpijlha427ope" path="res://Assets/Buildings/OBJ format/detail-parasol-b.obj" id="3_wan0n"]
+[ext_resource type="ArrayMesh" uid="uid://bjf4kq78dlhj3" path="res://Assets/Buildings/OBJ format/detail-overhang-wide.obj" id="4_auc41"]
+[ext_resource type="Texture2D" uid="uid://bbtjb2ul3xhln" path="res://Assets/LaptopAndMockup/Device 13PM.png" id="7_auc41"]
+[ext_resource type="Script" uid="uid://kg4smlcj4x1i" path="res://ScenesAndScipts/Scipts/canvas_layer.gd" id="7_ltv3l"]
+[ext_resource type="Script" uid="uid://c5evxdti8rlyv" path="res://ScenesAndScipts/Scipts/camera_3d.gd" id="8_w30at"]
+[ext_resource type="ArrayMesh" uid="uid://chnaavqv8cpux" path="res://Assets/Buildings/OBJ format/building-i.obj" id="10_tbd83"]
+[ext_resource type="ArrayMesh" uid="uid://ot7axj3ctyir" path="res://Assets/Buildings/OBJ format/building-j.obj" id="11_log2u"]
+[ext_resource type="PackedScene" uid="uid://bis78ifwr1v3r" path="res://ScenesAndScipts/Character/player.tscn" id="12_jsu5s"]
+[ext_resource type="ArrayMesh" uid="uid://bg3r86lu1co53" path="res://Assets/Buildings/OBJ format/building-k.obj" id="12_ke6xc"]
+[ext_resource type="Texture2D" uid="uid://75bvb6qfu2ua" path="res://Assets/FloorMaterials/A23DTEX_Albedo.jpg" id="13_jsu5s"]
+[ext_resource type="ArrayMesh" uid="uid://dbtysjfl4m4hl" path="res://Assets/Buildings/OBJ format/building-l.obj" id="13_k4701"]
+[ext_resource type="ArrayMesh" uid="uid://c30ngc3yvqvmy" path="res://Assets/Buildings/OBJ format/building-m.obj" id="14_jsu5s"]
+[ext_resource type="Texture2D" uid="uid://baalcxjtbqx8r" path="res://Assets/FloorMaterials/A23DTEX_Roughness.jpg" id="14_mas88"]
+[ext_resource type="ArrayMesh" uid="uid://c1nue0l2n014r" path="res://Assets/Buildings/OBJ format/building-n.obj" id="15_mas88"]
+[ext_resource type="ArrayMesh" uid="uid://dr62q8nnh4ymu" path="res://Assets/LaptopAndMockup/10120_LCD_Computer_Monitor_v01_max2011_it2.obj" id="17_k4701"]
+[ext_resource type="Texture2D" uid="uid://r1gn4cbqpaey" path="res://Assets/LaptopAndMockup/10120_LCD_Computer_Monitor_v01_diffuse.jpg" id="18_jsu5s"]
+[ext_resource type="Shader" uid="uid://csnt7fnyca5g3" path="res://ScenesAndScipts/Scipts/espejo.gdshader" id="20_6royh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5d3jg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wan0n"]
+size = Vector3(242.62845, 0.07714844, 204.2099)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no3ml"]
+albedo_texture = ExtResource("13_jsu5s")
+roughness_texture = ExtResource("14_mas88")
+normal_enabled = true
+normal_scale = 0.1
+uv1_scale = Vector3(40, 40, 40)
+uv2_scale = Vector3(10, 10, 10)
+stencil_flags = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_wlgur"]
+lightmap_size_hint = Vector2i(2502, 2502)
+size = Vector2(250, 250)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ke6xc"]
+sky_top_color = Color(0.50980395, 0.8117647, 0.99215686, 1)
+sky_horizon_color = Color(0.6627451, 0.8039216, 0.92156863, 1)
+ground_bottom_color = Color(0.3332914, 0.55748457, 0.7334848, 1)
+ground_horizon_color = Color(0.6627451, 0.8039216, 0.92156863, 1)
+sun_angle_max = 48.23
+sun_curve = 1.2423171
+
+[sub_resource type="Sky" id="Sky_k4701"]
+sky_material = SubResource("ProceduralSkyMaterial_ke6xc")
+
+[sub_resource type="Environment" id="Environment_5d3jg"]
+background_mode = 2
+sky = SubResource("Sky_k4701")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.48
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_k4701"]
+viewport_path = NodePath("SpyViewport1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4701"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_k4701")
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_jsu5s"]
+size = Vector2(40, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mas88"]
+albedo_texture = ExtResource("18_jsu5s")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6royh"]
+viewport_path = NodePath("MirrorViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lyybp"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("20_6royh")
+shader_parameter/viewport_texture = SubResource("ViewportTexture_6royh")
+shader_parameter/glass_tint = Color(0.85, 0.95, 0.92, 1)
+shader_parameter/reflection_mix = 0.9
+shader_parameter/distortion_strength = 0.005
+
+[sub_resource type="QuadMesh" id="QuadMesh_no3ml"]
+size = Vector2(9, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_en3mv"]
+
+[node name="Mapa" type="Node3D"]
+
+[node name="building" type="Node3D" parent="."]
+
+[node name="BuildingA" type="MeshInstance3D" parent="building"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 19.769773, 0, 15.006702)
+mesh = ExtResource("1_lrjei")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="LowDetailBuildingWideB" type="MeshInstance3D" parent="building"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -1.0736052, 0, 13.476548)
+mesh = ExtResource("2_5d3jg")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="DetailParasolB" type="MeshInstance3D" parent="building"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -10.459197, -1.1920929e-07, 1.4581726)
+mesh = ExtResource("3_wan0n")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="DetailOverhangWide" type="MeshInstance3D" parent="building"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 8.76045, -0.16954899, 11.954682)
+mesh = ExtResource("4_auc41")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="BuildingI" type="MeshInstance3D" parent="building"]
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -33.99727, 0, -13.872452)
+mesh = ExtResource("10_tbd83")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="BuildingJ" type="MeshInstance3D" parent="building"]
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -8.21579, 0, -13.763382)
+mesh = ExtResource("11_log2u")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="BuildingK" type="MeshInstance3D" parent="building"]
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, 23.715836, 0, -11.775528)
+mesh = ExtResource("12_ke6xc")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="BuildingL" type="MeshInstance3D" parent="building"]
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, 50.369553, 0, -13.265259)
+mesh = ExtResource("13_k4701")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="BuildingM" type="MeshInstance3D" parent="building"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -23.86557, 0, 19.658218)
+mesh = ExtResource("14_jsu5s")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="BuildingN" type="MeshInstance3D" parent="building"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -52.638397, 0, 24.700989)
+mesh = ExtResource("15_mas88")
+skeleton = NodePath("../..")
+script = ExtResource("2_ke6xc")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("12_jsu5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2314132, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+physics_material_override = SubResource("PhysicsMaterial_5d3jg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.952896, 0, -1.9667053)
+shape = SubResource("BoxShape3D_wan0n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_no3ml")
+mesh = SubResource("QuadMesh_wlgur")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5d3jg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("7_ltv3l")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -76.0
+offset_right = -198.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(176, 376)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("player_target")]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 7.215, 40, 2.354)
+script = ExtResource("8_w30at")
+player_target = NodePath("../../../../CharacterBody3D")
+
+[node name="Device13pm" type="Sprite2D" parent="CanvasLayer/SubViewportContainer"]
+position = Vector2(88, 187.86667)
+scale = Vector2(0.6533333, 0.6533333)
+texture = ExtResource("7_auc41")
+
+[node name="Monitor" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -11.022423, 2.9450023, 2.4522307)
+material_override = SubResource("StandardMaterial3D_k4701")
+mesh = SubResource("QuadMesh_jsu5s")
+skeleton = NodePath("MonitorFrame")
+
+[node name="MonitorFrame" type="MeshInstance3D" parent="Monitor"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.25497437, -21.678925, -0.48900986)
+mesh = ExtResource("17_k4701")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mas88")
+
+[node name="SpyViewport1" type="SubViewport" parent="."]
+
+[node name="SpyCam1" type="Camera3D" parent="SpyViewport1"]
+transform = Transform3D(0.741224, -0.11706519, 0.6609711, -0.034884907, 0.97662693, 0.21209179, -0.67035073, -0.18026544, 0.7198155, -3.8139648, 5.8298035, 7.81102)
+
+[node name="Mirror" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.38169, 2.388977, -6.222168)
+material_override = SubResource("ShaderMaterial_lyybp")
+mesh = SubResource("QuadMesh_no3ml")
+surface_material_override/0 = SubResource("ShaderMaterial_en3mv")
+
+[node name="MirrorViewport" type="SubViewport" parent="."]
+
+[node name="Mirror" type="Camera3D" parent="MirrorViewport"]
+transform = Transform3D(1, 0, -1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 15.19989, 3.1099548, -6.7905884)
