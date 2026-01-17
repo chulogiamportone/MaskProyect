@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dsvg57rymw8ir"]
+[gd_scene load_steps=40 format=3 uid="uid://dsvg57rymw8ir"]
 
 [ext_resource type="ArrayMesh" uid="uid://csbrnxghxgl5t" path="res://Assets/Buildings/OBJ format/building-a.obj" id="1_lrjei"]
 [ext_resource type="ArrayMesh" uid="uid://dp0aijxc2rqlw" path="res://Assets/Buildings/OBJ format/low-detail-building-wide-b.obj" id="2_5d3jg"]
@@ -21,12 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://r1gn4cbqpaey" path="res://Assets/LaptopAndMockup/10120_LCD_Computer_Monitor_v01_diffuse.jpg" id="18_jsu5s"]
 [ext_resource type="Shader" uid="uid://csnt7fnyca5g3" path="res://ScenesAndScipts/Scipts/espejo.gdshader" id="20_6royh"]
 [ext_resource type="PackedScene" uid="uid://digys1dw7m3p3" path="res://Assets/cat (2)/scene.gltf" id="21_en3mv"]
+[ext_resource type="Script" uid="uid://bujj3fvg2u6qr" path="res://ScenesAndScipts/monitor.gd" id="21_rrdw1"]
 [ext_resource type="Script" uid="uid://bgjoqq4lq5fba" path="res://ScenesAndScipts/Character/cat.gd" id="22_lyybp"]
+[ext_resource type="PackedScene" uid="uid://73b1te38csmc" path="res://Assets/pizzeria/pizzeria.tscn" id="23_jdbsx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5d3jg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wan0n"]
-size = Vector3(242.62845, 0.07714844, 204.2099)
+size = Vector3(743.2315, 0.07714844, 775.99)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no3ml"]
 albedo_texture = ExtResource("13_jsu5s")
@@ -60,7 +62,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.48
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_k4701"]
-viewport_path = NodePath("SpyViewport1")
+viewport_path = NodePath("Monitor/SpyViewport1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4701"]
 resource_local_to_scene = true
@@ -74,7 +76,7 @@ size = Vector2(40, 25)
 albedo_texture = ExtResource("18_jsu5s")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6royh"]
-viewport_path = NodePath("MirrorViewport")
+viewport_path = NodePath("Mirror/MirrorViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lyybp"]
 resource_local_to_scene = true
@@ -90,18 +92,18 @@ size = Vector2(9, 3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_en3mv"]
 
-[node name="Mapa" type="Node3D"]
+[node name="Map" type="Node3D"]
 
 [node name="building" type="Node3D" parent="."]
 
 [node name="BuildingA" type="MeshInstance3D" parent="building"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 19.769773, 0, 15.006702)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 19.769773, 0, 18.581066)
 mesh = ExtResource("1_lrjei")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="LowDetailBuildingWideB" type="MeshInstance3D" parent="building"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -1.0736052, 0, 13.476548)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -1.0736052, 0, 17.05091)
 mesh = ExtResource("2_5d3jg")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
@@ -113,131 +115,74 @@ skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="DetailOverhangWide" type="MeshInstance3D" parent="building"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 8.76045, -0.16954899, 11.954682)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 8.76045, -0.16954899, 15.529046)
 mesh = ExtResource("4_auc41")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="BuildingI" type="MeshInstance3D" parent="building"]
-transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -33.99727, 0, -13.872452)
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -58.769363, 0, -20.565434)
 mesh = ExtResource("10_tbd83")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="BuildingJ" type="MeshInstance3D" parent="building"]
-transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -8.21579, 0, -13.763382)
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -32.987885, 0, -20.456364)
 mesh = ExtResource("11_log2u")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="BuildingK" type="MeshInstance3D" parent="building"]
-transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, 23.715836, 0, -11.775528)
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, -1.0562592, 0, -18.46851)
 mesh = ExtResource("12_ke6xc")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="BuildingL" type="MeshInstance3D" parent="building"]
-transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, 50.369553, 0, -13.265259)
+transform = Transform3D(-15, 0, -1.3113416e-06, 0, 15, 0, 1.3113416e-06, 0, -15, 25.597458, 0, -19.95824)
 mesh = ExtResource("13_k4701")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="BuildingM" type="MeshInstance3D" parent="building"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -23.86557, 0, 19.658218)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -23.86557, 0, 23.232582)
 mesh = ExtResource("14_jsu5s")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
 [node name="BuildingN" type="MeshInstance3D" parent="building"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -52.638397, 0, 24.700989)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -52.638397, 0, 28.275352)
 mesh = ExtResource("15_mas88")
 skeleton = NodePath("../..")
 script = ExtResource("2_ke6xc")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("12_jsu5s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2314132, 0)
+[node name="Sketchfab_Scene" parent="building" instance=ExtResource("23_jdbsx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -220.77293, -31.02306, 66.58794)
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
 physics_material_override = SubResource("PhysicsMaterial_5d3jg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.952896, 0, -1.9667053)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="building/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.07382, 0, 44.941765)
 shape = SubResource("BoxShape3D_wan0n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="building/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 51.97081, 0, 0)
 material_override = SubResource("StandardMaterial3D_no3ml")
 mesh = SubResource("QuadMesh_wlgur")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="building"]
 environment = SubResource("Environment_5d3jg")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("7_ltv3l")
+[node name="CharacterBody3D" parent="." instance=ExtResource("12_jsu5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -374.0
-offset_top = -76.0
-offset_right = -198.0
-offset_bottom = 300.0
-grow_horizontal = 0
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(176, 376)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("player_target")]
-transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 7.215, 40, 2.354)
-script = ExtResource("8_w30at")
-player_target = NodePath("../../../../CharacterBody3D")
-
-[node name="Device13pm" type="Sprite2D" parent="CanvasLayer/SubViewportContainer"]
-position = Vector2(88, 187.86667)
-scale = Vector2(0.6533333, 0.6533333)
-texture = ExtResource("7_auc41")
-
-[node name="Monitor" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -11.022423, 2.9450023, 2.4522307)
-material_override = SubResource("StandardMaterial3D_k4701")
-mesh = SubResource("QuadMesh_jsu5s")
-skeleton = NodePath("MonitorFrame")
-
-[node name="MonitorFrame" type="MeshInstance3D" parent="Monitor"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.25497437, -21.678925, -0.48900986)
-mesh = ExtResource("17_k4701")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_mas88")
-
-[node name="SpyViewport1" type="SubViewport" parent="."]
-
-[node name="SpyCam1" type="Camera3D" parent="SpyViewport1"]
-transform = Transform3D(0.741224, -0.11706519, 0.6609711, -0.034884907, 0.97662693, 0.21209179, -0.67035073, -0.18026544, 0.7198155, -3.8139648, 5.8298035, 7.81102)
-
-[node name="Mirror" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.38169, 2.388977, -6.222168)
-material_override = SubResource("ShaderMaterial_lyybp")
-mesh = SubResource("QuadMesh_no3ml")
-surface_material_override/0 = SubResource("ShaderMaterial_en3mv")
-
-[node name="MirrorViewport" type="SubViewport" parent="."]
-
-[node name="Mirror" type="Camera3D" parent="MirrorViewport"]
-transform = Transform3D(1, 0, -1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 15.19989, 3.1099548, -6.7905884)
-
-[node name="OSG_Scene" parent="." instance=ExtResource("21_en3mv")]
+[node name="Cat" parent="." instance=ExtResource("21_en3mv")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -9.137924, 1.8622417, 1.1693192)
 script = ExtResource("22_lyybp")
 
-[node name="Skeleton3D" parent="OSG_Scene/RootNode (gltf orientation matrix)/RootNode (model correction matrix)/cat_fbx/Node/RootNode/Node2" index="0"]
+[node name="Skeleton3D" parent="Cat/RootNode (gltf orientation matrix)/RootNode (model correction matrix)/cat_fbx/Node/RootNode/Node2" index="0"]
 bones/2/rotation = Quaternion(0, -0.3738212, 0, 0.9275008)
 bones/4/rotation = Quaternion(0.0027466659, 0.20023192, 3.0518644e-05, 0.9797448)
 bones/5/rotation = Quaternion(-0.010773033, 0.21890925, -4.5505694e-10, 0.9756858)
@@ -295,9 +240,82 @@ bones/57/rotation = Quaternion(-7.203867e-10, 0.97012246, -3.7834336e-09, -0.242
 bones/58/rotation = Quaternion(0.034180727, 0.7964416, -0.024323255, 0.6032585)
 bones/59/rotation = Quaternion(0.43006685, 0.037965048, 0.9013947, 0.032995906)
 
-[node name="AnimationPlayer" parent="OSG_Scene" index="1"]
+[node name="AnimationPlayer" parent="Cat" index="1"]
 autoplay = "Take 001"
 
-[connection signal="animation_finished" from="OSG_Scene/AnimationPlayer" to="OSG_Scene" method="_on_animation_player_animation_finished"]
+[node name="SmartPhone" type="CanvasLayer" parent="."]
+script = ExtResource("7_ltv3l")
 
-[editable path="OSG_Scene"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SmartPhone"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -76.0
+offset_right = -198.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SmartPhone/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(176, 376)
+render_target_update_mode = 4
+
+[node name="GPSCam" type="Camera3D" parent="SmartPhone/SubViewportContainer/SubViewport" node_paths=PackedStringArray("player_target")]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 7.215, 40, 2.354)
+script = ExtResource("8_w30at")
+player_target = NodePath("../../../../CharacterBody3D")
+
+[node name="Frame" type="Sprite2D" parent="SmartPhone/SubViewportContainer"]
+position = Vector2(88, 187.86667)
+scale = Vector2(0.6533333, 0.6533333)
+texture = ExtResource("7_auc41")
+
+[node name="Monitor" type="Node3D" parent="."]
+script = ExtResource("21_rrdw1")
+
+[node name="Monitor" type="MeshInstance3D" parent="Monitor"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -11.022423, 2.9450023, 2.4522307)
+material_override = SubResource("StandardMaterial3D_k4701")
+mesh = SubResource("QuadMesh_jsu5s")
+skeleton = NodePath("MonitorFrame")
+
+[node name="MonitorFrame" type="MeshInstance3D" parent="Monitor/Monitor"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.25497437, -21.678925, -0.48900986)
+mesh = ExtResource("17_k4701")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mas88")
+
+[node name="SpyViewport1" type="SubViewport" parent="Monitor" groups=["Viewports"]]
+
+[node name="SpyCam1" type="Camera3D" parent="Monitor/SpyViewport1"]
+transform = Transform3D(0.741224, -0.11706519, 0.6609711, -0.034884907, 0.97662693, 0.21209179, -0.67035073, -0.18026544, 0.7198155, -3.8139648, 5.8298035, 7.81102)
+
+[node name="Mirror" type="Node3D" parent="."]
+
+[node name="Mirror" type="MeshInstance3D" parent="Mirror"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6338873, 2.3106995, -12.924744)
+material_override = SubResource("ShaderMaterial_lyybp")
+mesh = SubResource("QuadMesh_no3ml")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_en3mv")
+
+[node name="MirrorViewport" type="SubViewport" parent="Mirror"]
+
+[node name="Mirror" type="Camera3D" parent="Mirror/MirrorViewport"]
+transform = Transform3D(1, 1.776357e-15, -1.509958e-07, 2.1411157e-08, 0.9898954, 0.1417997, -1.4947004e-07, 0.1417997, -0.9898954, 7.815796, 2.9984322, -13.241367)
+
+[node name="NewCam" type="Node3D" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="NewCam" groups=["Viewports"]]
+
+[node name="Camera3D" type="Camera3D" parent="NewCam/SubViewport"]
+transform = Transform3D(0.3971479, 0.20776068, -0.893929, 0, 0.9740393, 0.22637935, 0.91775477, -0.08990608, 0.38683766, -256.29028, 4.166809, 41.409393)
+
+[connection signal="animation_finished" from="Cat/AnimationPlayer" to="Cat" method="_on_animation_player_animation_finished"]
+
+[editable path="Cat"]
