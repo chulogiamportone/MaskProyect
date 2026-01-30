@@ -1606,6 +1606,13 @@ shadow_mesh = SubResource("ArrayMesh_byf8u")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p6qh1"]
 data = PackedVector3Array(0.8804, -0.0163, 1.4246, -0.9407, -0.9407, 1.4246, -0.9407, -0.0163, 1.4246, 0.8804, -0.0163, 1.4246, 0.8804, -0.9407, 1.4246, -0.9407, -0.9407, 1.4246, 0.8804, 0.9407, 1.4246, 0.8804, -0.0163, 1.4246, -0.9407, -0.0163, 1.4246, 0.8804, 0.9407, 1.4246, -0.9407, -0.0163, 1.4246, -0.9407, 0.9407, 1.4246, 0.9407, 0.9407, 1.4246, 0.8804, -0.0163, 1.4246, 0.8804, 0.9407, 1.4246, 0.9407, 0.9407, 1.4246, 0.9407, -0.0163, 1.4246, 0.8804, -0.0163, 1.4246, 0.9407, -0.0163, 1.4246, 0.9407, -0.9407, 1.4246, 0.8804, -0.9407, 1.4246, 0.9407, -0.0163, 1.4246, 0.8804, -0.9407, 1.4246, 0.8804, -0.0163, 1.4246)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhw40"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.11764706)
+metallic = 1.0
+roughness = 0.1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k44nd"]
 resource_name = "Sidewalk"
 cull_mode = 2
@@ -21895,9 +21902,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8abig")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mny5u"]
-data = PackedVector3Array(-1, 1.2069, -1.4188, -1, 3.2069, 0.6745, -1, 1.2069, 0.6745, -1, 1.2069, -1.4188, -1, 3.2069, -1.4188, -1, 3.2069, 0.6745, -1, 3.2069, 0.6745, -1, 1.2069, 1.1031, -1, 1.2069, 0.6745, -1, 3.2069, 0.6745, -1, 3.2069, 1.1031, -1, 1.2069, 1.1031, -1, -1.207, 0.6745, -1, 1.2069, 0.6745, -1, 1.2069, 1.1031, -1, -1.207, 0.6745, -1, 1.2069, 1.1031, -1, -1.207, 1.1031, -1, -1.207, 0.6745, -1, -1.207, 1.1031, -1, -3.2069, 1.1031, -1, -1.207, 0.6745, -1, -3.2069, 1.1031, -1, -3.2069, 0.6745, -1, -3.2069, -1.4188, -1, -1.207, 0.6745, -1, -3.2069, 0.6745, -1, -3.2069, -1.4188, -1, -1.207, -1.4188, -1, -1.207, 0.6745, -1, 3.2069, -1.4188, 1, 3.2069, 0.6745, -1, 3.2069, 0.6745, -1, 3.2069, -1.4188, 1, 3.2069, -1.4188, 1, 3.2069, 0.6745, 1, 3.2069, 0.6745, -1, 3.2069, 1.1031, -1, 3.2069, 0.6745, 1, 3.2069, 0.6745, 1, 3.2069, 1.1031, -1, 3.2069, 1.1031, 1, 3.2069, -1.4188, 1, 1.2069, 0.6745, 1, 3.2069, 0.6745, 1, 3.2069, -1.4188, 1, 1.2069, -1.4188, 1, 1.2069, 0.6745, 1, 1.2069, 0.6745, 1, 3.2069, 1.1031, 1, 3.2069, 0.6745, 1, 1.2069, 0.6745, 1, 1.2069, 1.1031, 1, 3.2069, 1.1031, 1, -1.207, 1.1031, 1, 1.2069, 1.1031, 1, 1.2069, 0.6745, 1, -1.207, 1.1031, 1, 1.2069, 0.6745, 1, -1.207, 0.6745, 1, -3.2069, 0.6745, 1, -1.207, 1.1031, 1, -1.207, 0.6745, 1, -3.2069, 0.6745, 1, -3.2069, 1.1031, 1, -1.207, 1.1031, 1, -1.207, -1.4188, 1, -3.2069, 0.6745, 1, -1.207, 0.6745, 1, -1.207, -1.4188, 1, -3.2069, -1.4188, 1, -3.2069, 0.6745, 1, 1.2069, -1.4188, -1, 1.2069, 0.6745, 1, 1.2069, 0.6745, 1, 1.2069, -1.4188, -1, 1.2069, -1.4188, -1, 1.2069, 0.6745, -1, 3.2069, -1.4188, 1, 1.2069, -1.4188, 1, 3.2069, -1.4188, -1, 3.2069, -1.4188, -1, 1.2069, -1.4188, 1, 1.2069, -1.4188, -1, -1.207, -1.4188, 1, -1.207, 0.6745, -1, -1.207, 0.6745, -1, -1.207, -1.4188, 1, -1.207, -1.4188, 1, -1.207, 0.6745, 1, -3.2069, -1.4188, -1, -3.2069, 0.6745, 1, -3.2069, 0.6745, 1, -3.2069, -1.4188, -1, -3.2069, -1.4188, -1, -3.2069, 0.6745, -1, -3.2069, 0.6745, 1, -3.2069, 1.1031, 1, -3.2069, 0.6745, -1, -3.2069, 0.6745, -1, -3.2069, 1.1031, 1, -3.2069, 1.1031, -1, -1.207, -1.4188, 1, -3.2069, -1.4188, 1, -1.207, -1.4188, -1, -1.207, -1.4188, -1, -3.2069, -1.4188, 1, -3.2069, -1.4188, -1, -1.207, 1.1031, 1, 1.2069, 1.1031, 1, -1.207, 1.1031, 1, -1.207, 1.1031, -1, -3.2069, 1.1031, -1, -1.207, 1.1031, 1, -1.207, 1.1031, 1, -3.2069, 1.1031, -1, -3.2069, 1.1031, -1, -1.207, 1.1031, -1, 1.2069, 1.1031, 1, 1.2069, 1.1031, 1, 3.2069, 1.1031, 1, 1.2069, 1.1031, -1, 1.2069, 1.1031, 1, 3.2069, 1.1031, -1, 1.2069, 1.1031, -1, 3.2069, 1.1031, 1, -1.207, 0.6745, -1, 1.2069, 0.6745, -1, -1.207, 0.6745, 1, -1.207, 0.6745, 1, 1.2069, 0.6745, -1, 1.2069, 0.6745)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn6j0"]
 resource_name = "Light"
 cull_mode = 2
@@ -23144,6 +23148,7 @@ shape = SubResource("ConcavePolygonShape3D_p6qh1")
 transform = Transform3D(100, 0, 0, 0, -1.6292068e-05, 100, 0, -100, -1.6292068e-05, -287.4341, 2057.5127, -3469.4219)
 
 [node name="Road_002_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_002"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_v7j6m")
 skeleton = NodePath("")
 
@@ -23151,6 +23156,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_3gqjr")
 
 [node name="Road_002_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_002"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_miwbp")
 skeleton = NodePath("")
 
@@ -23158,6 +23164,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_bqrg5")
 
 [node name="Road_002_Grass_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_002"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_6ov1s")
 skeleton = NodePath("")
 
@@ -23165,6 +23172,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_4bbfs")
 
 [node name="Road_002_Sidewalk_01_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_002"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_a0q4u")
 skeleton = NodePath("")
 
@@ -23175,6 +23183,7 @@ shape = SubResource("ConcavePolygonShape3D_1dxal")
 transform = Transform3D(5.590958e-06, -127.90621, -5.590958e-06, -1.4200442e-14, -5.590958e-06, 127.90621, -127.90621, -5.590958e-06, -2.5560795e-13, -287.43408, 2052.265, -5474.209)
 
 [node name="Road_003_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_003"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_cc38g")
 skeleton = NodePath("")
 
@@ -23182,6 +23191,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_bsiw2")
 
 [node name="Road_003_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_003"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_btoep")
 skeleton = NodePath("")
 
@@ -23189,6 +23199,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_2t5vg")
 
 [node name="Road_003_Sidewalk_01_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_003"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_sagcw")
 skeleton = NodePath("")
 
@@ -23199,6 +23210,7 @@ shape = SubResource("ConcavePolygonShape3D_wqp2x")
 transform = Transform3D(4.371139e-06, -100, -4.371139e-06, -1.110223e-14, -4.371139e-06, 100, -100, -4.371139e-06, -1.9984014e-13, -287.4341, 2052.265, 3933.785)
 
 [node name="Road_004_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_004"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_3j4l7")
 skeleton = NodePath("")
 
@@ -23206,6 +23218,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_478lf")
 
 [node name="Road_004_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_004"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_u2rxk")
 skeleton = NodePath("")
 
@@ -23213,6 +23226,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_68sve")
 
 [node name="Road_004_Grass_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_004"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_h7ar1")
 skeleton = NodePath("")
 
@@ -23220,6 +23234,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_vbl8i")
 
 [node name="Road_004_Sidewalk_01_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_004"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_dkobo")
 skeleton = NodePath("")
 
@@ -23230,6 +23245,7 @@ shape = SubResource("ConcavePolygonShape3D_ltehs")
 transform = Transform3D(-127.90621, 4.9808517e-05, -3.7447745e-12, 1.566399e-14, 9.65665e-06, 127.90621, 4.9808517e-05, 127.90621, -9.65665e-06, -1289.8279, 2052.265, -4471.8154)
 
 [node name="Road_005_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_005"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_7vvwx")
 skeleton = NodePath("")
 
@@ -23237,6 +23253,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_36vtb")
 
 [node name="Road_005_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_005"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_2573n")
 skeleton = NodePath("")
 
@@ -23244,6 +23261,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_wlot1")
 
 [node name="Road_005_Sidewalk_01_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_005"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_gqeph")
 skeleton = NodePath("")
 
@@ -23254,6 +23272,7 @@ shape = SubResource("ConcavePolygonShape3D_rr64s")
 transform = Transform3D(-127.90621, 4.9808517e-05, -3.7447745e-12, 1.566399e-14, 9.65665e-06, 127.90621, 4.9808517e-05, 127.90621, -9.65665e-06, -1289.8279, 2052.265, 4936.178)
 
 [node name="Road_007_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_007"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_0221b")
 skeleton = NodePath("")
 
@@ -23261,6 +23280,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_1ip1v")
 
 [node name="Road_007_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_007"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_xwunl")
 skeleton = NodePath("")
 
@@ -23271,6 +23291,7 @@ shape = SubResource("ConcavePolygonShape3D_2kdb1")
 transform = Transform3D(127.90621, 0, 0, 0, -2.0838566e-05, 127.90621, 0, -127.90621, -2.0838566e-05, -9695.426, 2052.265, -3469.4192)
 
 [node name="Road_008_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_008"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_gmfih")
 skeleton = NodePath("")
 
@@ -23278,6 +23299,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_uean6")
 
 [node name="Road_008_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_008"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_c3qya")
 skeleton = NodePath("")
 
@@ -23288,6 +23310,7 @@ shape = SubResource("ConcavePolygonShape3D_utqr1")
 transform = Transform3D(127.90621, 4.9808517e-05, 3.7447745e-12, 1.566399e-14, -9.65665e-06, 127.90621, -4.9808517e-05, 127.90621, 9.65665e-06, 714.9597, 2052.265, 4936.178)
 
 [node name="Road_010_Sidewalk_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_010"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_0k5l0")
 skeleton = NodePath("")
 
@@ -23300,6 +23323,7 @@ shape = SubResource("ConcavePolygonShape3D_aflbv")
 shape = SubResource("ConcavePolygonShape3D_tag78")
 
 [node name="Road_010_Road_0" type="MeshInstance3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Road_010"]
+material_overlay = SubResource("StandardMaterial3D_uhw40")
 mesh = SubResource("ArrayMesh_najq2")
 skeleton = NodePath("")
 
@@ -28542,9 +28566,6 @@ transform = Transform3D(2.3756583, 0, 0, 0, -1.2041748e-05, 73.91172, 0, -73.911
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54467773, 0.03534317, -0.04925728)
 mesh = SubResource("ArrayMesh_4im1f")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode/Glass"]
-shape = SubResource("ConcavePolygonShape3D_mny5u")
 
 [node name="Light" type="StaticBody3D" parent="Sketchfab_model/Pizzeria_Scene_fbx/RootNode"]
 transform = Transform3D(46.856125, 0, 0, 0, -7.633832e-06, 46.856125, 0, -46.856125, -7.633832e-06, -1928.7548, 2420.0637, -1953.1796)

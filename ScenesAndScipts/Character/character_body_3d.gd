@@ -6,7 +6,8 @@ extends CharacterBody3D
 @export var CROUCH_SPEED = 3.0
 @export var JUMP_VELOCITY = 4.5
 @export var MOUSE_SENSITIVITY = 0.003
-
+@export var mask_canvas_layer:CanvasLayer
+@export var gatito:Node3D
 # Variables de gravedad (obtenidas de la configuración del proyecto)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -17,7 +18,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # --- NUEVO: Referencia al AnimationPlayer ---
 # El nodo characterMedium es el nombre de la instancia en tu player.tscn [cite: 9]
 @onready var anim_player = $characterMedium/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var is_mask_active:bool=false
 # Variables para agacharse
 var default_height = 1.7 
 var crouch_height = 1.0  
@@ -43,6 +46,18 @@ func _physics_process(delta):
 
 	# 3. Lógica de Agacharse (Crouch)
 	var current_speed = WALKING_SPEED
+	
+	if Input.is_action_just_pressed("action") and !is_mask_active:
+		is_mask_active=true
+		
+		animation_player.play("mask_move")
+		
+	else:
+		if Input.is_action_just_pressed("action") and is_mask_active:
+			mask_canvas_layer.visible=false
+			is_mask_active=false
+			gatito.visible=false
+			animation_player.play_backwards("mask_move")
 	
 	if Input.is_action_pressed("crouch"):
 		current_speed = CROUCH_SPEED
@@ -106,3 +121,9 @@ func update_animations(input_dir: Vector2):
 		else:
 			# Caminando normal
 			anim_player.play("run/Root|Run", blend_time) # Asumiendo nombre "Walk" en librería "animation"
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if is_mask_active:
+		mask_canvas_layer.visible=true
+		gatito.visible=true

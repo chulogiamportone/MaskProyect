@@ -1,0 +1,8 @@
+res://ScenesAndScipts/mapa.tscn
+res://ScenesAndScipts/Scipts/espejo.gdshader
+res://ScenesAndScipts/gradiente_v_r_n.tres
+res://ScenesAndScipts/infrarojo.gdshader
+res://shy.gdshader
+res://ScenesAndScipts/world_environment.gd
+res://ScenesAndScipts/Character/player.tscn
+res://Assets/pizzeria/pizzeria.tscn

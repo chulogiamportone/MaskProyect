@@ -1,0 +1,13 @@
+Node3D
+AnimationPlayer
+ColorRect
+TextureRect
+SubViewportContainer
+CanvasLayer
+Camera3D
+SubViewport
+StaticBody3D
+MeshInstance3D
+WorldEnvironment
+CollisionShape3D
+CharacterBody3D
