@@ -1,6 +1,6 @@
+Node3D
 CollisionShape3D
 Area3D
-Node3D
 StaticBody3D
 ColorRect
 MeshInstance3D
@@ -12,4 +12,3 @@ SubViewportContainer
 RigidBody3D
 AnimationPlayer
 TextureRect
-CanvasLayer
