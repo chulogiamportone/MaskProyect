@@ -1,0 +1,717 @@
+[gd_scene load_steps=6 format=3 uid="uid://dld4fhugcho4x"]
+
+[ext_resource type="Shader" uid="uid://c4j7tjvqisjan" path="res://ScenesAndScipts/ForestScenes/camino.gdshader" id="1_7qm78"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_20nkk"]
+size = Vector2(3, 3)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_20nkk"]
+noise_type = 0
+seed = 2
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bho8w"]
+noise = SubResource("FastNoiseLite_20nkk")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bho8w"]
+render_priority = 0
+shader = ExtResource("1_7qm78")
+shader_parameter/fuerza_desincronizacion = 5.0
+shader_parameter/densidad_vertical = 1.0
+shader_parameter/repeticion_horizontal = 2.0000000475
+shader_parameter/separacion_pies = 0.0
+shader_parameter/velocidad_secuencia = 1.0000000475
+shader_parameter/direccion_secuencia = 1.0
+shader_parameter/recorte_tiempo_prendido = 0.5
+shader_parameter/dureza_aparicion = 0.5
+shader_parameter/activar_strobo = true
+shader_parameter/velocidad_strobo = 6.000000285
+shader_parameter/dureza_strobo = 0.0
+shader_parameter/desincronizacion_strobo = 8.4370004007575
+shader_parameter/luz_minima_strobo = 0.1
+shader_parameter/gotas_por_paso = 7
+shader_parameter/dispersion = 0.400000019
+shader_parameter/tamano_chico = 0.02000000095
+shader_parameter/tamano_medio = 0.050000002375
+shader_parameter/tamano_grande = 0.070000003325
+shader_parameter/color_sangre = Color(0.8, 0, 0, 1)
+shader_parameter/color_brillo = Color(1, 0.2, 0.1, 1)
+shader_parameter/intensidad_brillo = 8.0
+shader_parameter/textura_ruido = SubResource("NoiseTexture2D_bho8w")
+shader_parameter/distorsion_liquida = 0.2000000095
+shader_parameter/luz_invisibilidad = 0.0
+
+[node name="Caminos" type="Node3D"]
+
+[node name="Camino" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -152.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -149.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -146.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -143.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -140.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -137.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -134.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -131.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -128.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -125.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -122.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -119.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino13" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -116.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino14" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -113.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino15" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -110.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino16" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -107.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino17" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -104.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino18" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -101.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino19" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -98.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino20" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -95.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino21" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -92.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -89.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino23" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -86.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino24" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -83.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino25" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -86.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino26" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -83.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino27" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -80.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino28" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -77.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino29" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -74.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino30" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -71.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino31" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -68.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino32" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -65.72388, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino33" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -62.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino34" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -59.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino35" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -56.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino36" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -53.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino37" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -50.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino38" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -47.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino39" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino40" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino41" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -38.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino42" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -35.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino43" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -32.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino44" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -29.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino45" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -26.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino46" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -23.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino47" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino48" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino49" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino50" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino51" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino52" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino53" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.723877, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino54" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino55" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino56" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino57" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino58" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino59" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino60" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino61" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino62" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino63" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino64" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 31.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino65" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 34.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino66" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino67" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino68" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 43.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino69" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 46.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino70" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 49.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino71" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 52.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino72" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino73" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 52.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino74" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino75" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 58.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino76" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 61.276123, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino77" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 64.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino78" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 67.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino79" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 70.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino80" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 73.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino81" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 76.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino82" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 79.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino83" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 82.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino84" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 85.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino85" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 88.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino86" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 91.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino87" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 94.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino88" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 97.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino89" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino90" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 103.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino91" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 106.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino92" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 109.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino93" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 112.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino94" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 115.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 1.5000000223518
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino95" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 118.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 8.20000012218984
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")
+
+[node name="Camino96" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 121.27612, 11.921875, 96.003876)
+instance_shader_parameters/semilla_instancia = 4.0000000596048
+mesh = SubResource("PlaneMesh_20nkk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_bho8w")

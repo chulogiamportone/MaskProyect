@@ -1,0 +1,25 @@
+[gd_resource type="Sky" load_steps=5 format=3 uid="uid://bfr5t2dadf5k7"]
+
+[ext_resource type="Shader" uid="uid://ba5la6x87q8ie" path="res://shy.gdshader" id="1_67k56"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j4hav"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yw6y6"]
+noise = SubResource("FastNoiseLite_j4hav")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxq1s"]
+shader = ExtResource("1_67k56")
+shader_parameter/top_color = Color(0, 0, 0, 1)
+shader_parameter/cloud_color = Color(0.1, 0, 0.15, 1)
+shader_parameter/lightning_color = Color(0.8, 0.6, 1, 1)
+shader_parameter/vortex_size = 0.9900000095367401
+shader_parameter/cloud_texture = SubResource("NoiseTexture2D_yw6y6")
+shader_parameter/vortex_speed = 0.51600002451
+shader_parameter/lightning_strength = 0.010000000475
+shader_parameter/cloud_coverage = 0.800000038
+shader_parameter/horizon_color = Color(0, 0, 0.05, 1)
+shader_parameter/horizon_blur = 0.15
+
+[resource]
+sky_material = SubResource("ShaderMaterial_rxq1s")

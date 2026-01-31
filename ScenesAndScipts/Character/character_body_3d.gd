@@ -4,10 +4,10 @@ extends CharacterBody3D
 @export var WALKING_SPEED = 5.0
 @export var RUNNING_SPEED = 9.0
 @export var CROUCH_SPEED = 3.0
-@export var JUMP_VELOCITY = 4.5
+@export var JUMP_VELOCITY = 10#4.5
 @export var MOUSE_SENSITIVITY = 0.003
 @export var mask_canvas_layer:CanvasLayer
-@export var gatito:Node3D
+var mask_visible:Array[Node]
 # Variables de gravedad (obtenidas de la configuración del proyecto)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -28,6 +28,7 @@ var crouch_speed_transition = 10.0
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	mask_visible=get_tree().get_nodes_in_group("enemigos")
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -56,7 +57,8 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("action") and is_mask_active:
 			mask_canvas_layer.visible=false
 			is_mask_active=false
-			gatito.visible=false
+			for object in mask_visible:
+				object.visible=false
 			animation_player.play_backwards("mask_move")
 	
 	if Input.is_action_pressed("crouch"):
@@ -126,4 +128,5 @@ func update_animations(input_dir: Vector2):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if is_mask_active:
 		mask_canvas_layer.visible=true
-		gatito.visible=true
+		for object in mask_visible:
+			object.visible=true

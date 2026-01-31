@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djujj5c3depn3"
+path="res://.godot/imported/(Sötét... Hideg... Vér...).mp3-2e398524d1f3db32e9bad9f4eb493d20.mp3str"
+
+[deps]
+
+source_file="res://Audio/(Sötét... Hideg... Vér...).mp3"
+dest_files=["res://.godot/imported/(Sötét... Hideg... Vér...).mp3-2e398524d1f3db32e9bad9f4eb493d20.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

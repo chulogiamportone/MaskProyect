@@ -11,15 +11,20 @@ config_version=5
 [application]
 
 config/name="MaskProyect"
-run/main_scene="uid://dsvg57rymw8ir"
+run/main_scene="uid://i321731nan7u"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [file_customization]
 
 folder_colors={
 "res://Assets/": "red",
+"res://Audio/": "green",
 "res://ScenesAndScipts/": "purple"
 }
+
+[global_group]
+
+mask_visible=""
 
 [input]
 
