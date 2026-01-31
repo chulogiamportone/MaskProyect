@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var WALKING_SPEED = 5.0
 @export var RUNNING_SPEED = 9.0
 @export var CROUCH_SPEED = 3.0
-@export var JUMP_VELOCITY = 10#4.5
+@export var JUMP_VELOCITY = 4.5
 @export var MOUSE_SENSITIVITY = 0.003
 @export var mask_canvas_layer:CanvasLayer
 var mask_visible:Array[Node]
