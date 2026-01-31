@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cd8805rlbtem" path="res://Assets/espectro.glb" id="18_l577h"]
 [ext_resource type="PackedScene" uid="uid://n6rn3swmmyek" path="res://Assets/nuevosAssets/staff.glb" id="24_2dvin"]
 [ext_resource type="PackedScene" uid="uid://dl1c0gj1jsybj" path="res://Assets/nuevosAssets/wooden_crate.glb" id="32_frt2y"]
-[ext_resource type="PackedScene" uid="uid://bcv71ck28lg6u" path="res://Assets/nuevosAssets/demon_mask.glb" id="33_0j227"]
+[ext_resource type="PackedScene" uid="uid://bcv71ck28lg6u" path="res://Assets/nuevosAssets/demon mask/demon_mask.glb" id="33_0j227"]
 [ext_resource type="Texture2D" uid="uid://cxm0t1s2ldty" path="res://Assets/nuevosAssets/grim_reaper_faceless_death_black_wings_poly_0.jpg" id="36_syogc"]
 [ext_resource type="Texture2D" uid="uid://cxm48lx7skcu7" path="res://Assets/nuevosAssets/grim_reaper_faceless_death_black_wings_poly_1.png" id="37_hwkox"]
 [ext_resource type="Texture2D" uid="uid://bivnvxroa66uk" path="res://Assets/nuevosAssets/grim_reaper_faceless_death_black_wings_poly_2.png" id="38_qm6d0"]
@@ -2217,24 +2217,26 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 171.95813, 0.0396668, 220.466
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("33_0j227")]
 transform = Transform3D(-4.3711385e-08, -0.70710677, 0.7071067, 0, 0.70710677, 0.7071067, -0.99999994, 3.090862e-08, -3.0908616e-08, 133.46829, 1.9827455, 375.82947)
 
-[node name="Demon1" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 57.199493, 5.0912056, -22.436829)
+[node name="Estatuas" type="Node3D" parent="."]
 
-[node name="tripo_node_6d8a1f6e_tripo_mat_6d8a1f6e_0" type="MeshInstance3D" parent="Demon1"]
+[node name="Demon1" type="StaticBody3D" parent="Estatuas"]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 57.199493, 5.0912056, 92.72363)
+
+[node name="tripo_node_6d8a1f6e_tripo_mat_6d8a1f6e_0" type="MeshInstance3D" parent="Estatuas/Demon1"]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_alkei")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Demon1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estatuas/Demon1"]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_bs1mx")
 
-[node name="tripo_node_6d8a1f6e_tripo_mat_6d8a1f6e_02" type="MeshInstance3D" parent="Demon1"]
+[node name="tripo_node_6d8a1f6e_tripo_mat_6d8a1f6e_02" type="MeshInstance3D" parent="Estatuas/Demon1"]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_1iso8")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Demon1"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Estatuas/Demon1"]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_hcgmh")
 
