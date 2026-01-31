@@ -1,6 +1,7 @@
 [gd_scene load_steps=75 format=4 uid="uid://i321731nan7u"]
 
 [ext_resource type="Texture2D" uid="uid://75bvb6qfu2ua" path="res://Assets/FloorMaterials/A23DTEX_Albedo.jpg" id="13_4beok"]
+[ext_resource type="PackedScene" uid="uid://bjtjrtvlkxp4d" path="res://ScenesAndScipts/ForestScenes/caliz.tscn" id="13_fakfi"]
 [ext_resource type="Texture2D" uid="uid://baalcxjtbqx8r" path="res://Assets/FloorMaterials/A23DTEX_Roughness.jpg" id="14_1vwjq"]
 [ext_resource type="PackedScene" uid="uid://bis78ifwr1v3r" path="res://ScenesAndScipts/Character/player.tscn" id="17_y8jx7"]
 [ext_resource type="PackedScene" uid="uid://dalgliwf0p8pk" path="res://Assets/nuevosAssets/demonic_horned_horror_knight.glb" id="21_17iq5"]
@@ -27,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://bgvhibodliot2" path="res://Assets/nuevosAssets/knife.glb" id="35_akhvj"]
 [ext_resource type="PackedScene" uid="uid://dh7ji3ktqet1f" path="res://Assets/nuevosAssets/horned_infernal_duke.glb" id="36_gyhkd"]
 [ext_resource type="PackedScene" uid="uid://dydk6v4cg3in1" path="res://Assets/nuevosAssets/grim_reaper_faceless_death_black_wings_poly.glb" id="37_31kkp"]
-[ext_resource type="PackedScene" uid="uid://bs1f8rj4vf45u" path="res://Assets/nuevosAssets/gothic_chalice.glb" id="38_2t5yf"]
 [ext_resource type="PackedScene" uid="uid://bsai3spmdj52t" path="res://ScenesAndScipts/ForestScenes/forest_map.tscn" id="38_wtnb6"]
 [ext_resource type="PackedScene" uid="uid://0rxfqiwbdqac" path="res://Assets/nuevosAssets/faceless_grim_reaper_feathered_wings_and_horns.glb" id="42_1vwjq"]
 
@@ -666,10 +666,9 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 51.9
 material_override = SubResource("StandardMaterial3D_no3ml")
 mesh = SubResource("QuadMesh_wlgur")
 
-[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("mask_canvas_layer", "gatito") instance=ExtResource("17_y8jx7")]
+[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("mask_canvas_layer") instance=ExtResource("17_y8jx7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -603.796, 1.0000001, 483.98267)
 mask_canvas_layer = NodePath("../Googles")
-gatito = NodePath("../GhostWorld")
 
 [node name="Googles" type="CanvasLayer" parent="."]
 visible = false
@@ -788,7 +787,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 86.34921, 3.739151, -45.60083
 [node name="Cuchillo" parent="Items" instance=ExtResource("35_akhvj")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 88.07092, 0.686581, -50.23072)
 
-[node name="Caliz" parent="Items" instance=ExtResource("38_2t5yf")]
+[node name="Caliz" parent="Items" instance=ExtResource("13_fakfi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.15778, 0.018859662, -54.983406)
 
 [node name="Brazo1" parent="Items" instance=ExtResource("26_s4vql")]
