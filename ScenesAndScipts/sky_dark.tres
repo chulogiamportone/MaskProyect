@@ -1,12 +1,12 @@
 [gd_resource type="Sky" load_steps=2 format=3 uid="uid://bb4lbn3hwjt2e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gyhkd"]
-sky_top_color = Color(0.23031503, 0.23031488, 0.23031497, 1)
-sky_horizon_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
+sky_top_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+sky_horizon_color = Color(0.08469013, 0.08468986, 0.0846898, 1)
 sky_curve = 0.7647361
-ground_bottom_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
-ground_horizon_color = Color(1, 1, 1, 1)
-sun_angle_max = 0.0
+ground_bottom_color = Color(0.8346143, 0.8346143, 0.8346143, 1)
+ground_horizon_color = Color(0.86036915, 0.8603692, 0.8603692, 1)
+sun_angle_max = 313.85
 
 [resource]
 sky_material = SubResource("ProceduralSkyMaterial_gyhkd")

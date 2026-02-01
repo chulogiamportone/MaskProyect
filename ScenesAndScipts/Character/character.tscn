@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://xa4f2cv6axx7"]
+[gd_scene load_steps=6 format=3 uid="uid://xa4f2cv6axx7"]
 
 [ext_resource type="PackedScene" uid="uid://dnrrdlufawfqr" path="res://Assets/Characters/Model/characterMedium.fbx" id="1_glpr6"]
-[ext_resource type="Texture2D" uid="uid://ck00ctthk4nkb" path="res://Assets/Characters/Skins/skaterFemaleA.png" id="2_px5sl"]
 [ext_resource type="AnimationLibrary" uid="uid://uuc5l75qfqdr" path="res://ScenesAndScipts/Animations/animation.res" id="2_wa5vi"]
 [ext_resource type="AnimationLibrary" uid="uid://dukgv2r56eoo4" path="res://ScenesAndScipts/Animations/jump.res" id="3_wfnr8"]
 [ext_resource type="AnimationLibrary" uid="uid://b882wtpfkohkb" path="res://ScenesAndScipts/Animations/run.res" id="4_wfnr8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qfo5"]
-albedo_texture = ExtResource("2_px5sl")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26ryx"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
 [node name="characterMedium" instance=ExtResource("1_glpr6")]
 
@@ -138,7 +138,7 @@ bones/56/rotation = Quaternion(0.028260892, 0.9539412, -0.29757363, -0.025446728
 bones/56/scale = Vector3(1.0000001, 1.0000002, 0.9999999)
 
 [node name="characterMedium" parent="Root/Skeleton3D" index="0"]
-material_override = SubResource("StandardMaterial3D_0qfo5")
+surface_material_override/0 = SubResource("StandardMaterial3D_26ryx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 libraries = {

@@ -1,5 +1,7 @@
 StaticBody3D
+SpotLight3D
 Node3D
+RayCast3D
 CollisionShape3D
 Area3D
 ColorRect
@@ -10,5 +12,3 @@ Camera3D
 SubViewport
 SubViewportContainer
 RigidBody3D
-AnimationPlayer
-TextureRect

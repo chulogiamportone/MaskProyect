@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8tv5q3qhg3uu"]
+
+[ext_resource type="Texture2D" uid="uid://brx0g6xto7iaf" path="res://Assets/nuevosAssets/pine_forest_2.jpg" id="1_32124"]
+
+[resource]
+resource_name = "mat1"
+albedo_texture = ExtResource("1_32124")
+metallic = 1.0
+heightmap_enabled = true
+heightmap_scale = 3.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("1_32124")
+texture_filter = 1

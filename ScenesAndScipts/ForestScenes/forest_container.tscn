@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://dhe55h6rmwqgg"]
+[gd_scene load_steps=10 format=4 uid="uid://dhe55h6rmwqgg"]
 
 [ext_resource type="Texture2D" uid="uid://e5y6q7sdbpv8" path="res://Assets/nuevosAssets/pine_forest_0.png" id="1_j0a21"]
 [ext_resource type="Texture2D" uid="uid://isqoom7sgfix" path="res://Assets/nuevosAssets/pine_forest_1.jpg" id="2_r2v3r"]
-[ext_resource type="Texture2D" uid="uid://brx0g6xto7iaf" path="res://Assets/nuevosAssets/pine_forest_2.jpg" id="3_570sm"]
+[ext_resource type="Material" uid="uid://c8tv5q3qhg3uu" path="res://ScenesAndScipts/forest_container.tres" id="3_j0a21"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7tr8"]
 resource_name = "pine"
@@ -51,12 +51,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ltcjv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7bhg"]
-resource_name = "mat1"
-albedo_texture = ExtResource("3_570sm")
-metallic = 1.0
-texture_filter = 1
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_unirl"]
 _surfaces = [{
 "aabb": AABB(-27.161747, -0.5115939, -27.160208, 54.321953, 2.3896992, 54.320415),
@@ -81,7 +75,7 @@ _surfaces = [{
 "index_count": 432,
 "index_data": PackedByteArray("MgABAAIAAAACAAMAMgACAAAABAAyAAAAMwABADIANAAyAAQANAAzADIABAA1ADQABwA1AAQANgAzADQABwA3ADUANAA4ADYANQA4ADQACQA3AAcAIgAzADYANgA4ACIAOQABADMAOQAzACIABgABADkACQA6ADcACwA6AAkAOwAGADkACAAGADsACAA7AAoAOwA5ADwAPAA5ACIACgA7AD0AOwA8AD0APgAKAD0ADAAKAD4APQA8ACMAPQAjAD4APwAMAD4AGQAMAD8AGQA/ACEAIQA/ACAAIAA/AB8APwA+AEAAHwA/AEAAQAA+ADEAPgAjADEAQAAuAB8AHwAuAB4AMQAwAEAAMQAjADAAQAAwAC4ALgBBAB4AHgBBAB0AMABCAC4ALgBCAEEAMAAjAC8AMAAvAEIAQQAsAB0AQQBCACwAHQAsABwAHAAsABsAIwBDAC8APABDACMAQgAvAEQALwBDAEQAPAAkAEMAIgAkADwAIgA4ACQAQwAkACYARABDACYAJAA4AEUAJgAkAEUARAAmACoARAAqAEIAJgBFAEYAKgAmAEYARgBFAEcARwBIAEYARQA4ACUANQAlADgARQAlAEkANwAlADUARgBIACgARgAoACoASABKACgANwBLACUASQAlAEsAOgBLADcASwAnAEkAOgAnAEsASQAnAEwATQAnADoACwBNADoADQBNAAsADQBOAE0ATgAnAE0ADgBOAA0AJwBPAEwATwAnAE4ATABPAFAADgBRAE4AUQBPAE4ADwBRAA4ATwBSAFAAUgBPAFEADwARAFEAEQBSAFEAEAARAA8AUABSAFMAEgBSABEAUwBSABMAEwBSABIAFABUABMAVQBUABQAVQBKAFQAVQAUAFYAVgAUABUAFgBWABUAVwBKAFUAKABKAFcAKQBVAFYAVwBVACkAWABWABYAWAApAFYAFwBYABYAKABXAFkAWQBXACkAKgAoAFkAKgBZAC0AQgAqAC0ALABCAC0ALQBZAFoALQBaACwAWQApAFoALABaAFsAGwAsAFsAGwBbABoAGgBbAFwAWwBaAFwAGgBcAAUAWgApACsAXABaACsAKwApAFgABQBcAF0AXAArAF0AXQArAFgABQBdABgAXQBYABcAGABdABcA"),
 "lods": [1.3942306, PackedByteArray("AAABAAIAAAACAAMABAABAAAAIgABAAQABgABACIAIwAGACIACAAGACMACAAjAAoACgAjAAwABAAkACIAIgAkACMAJQAkAAQABwAlAAQABwAJACUAJgAkACUAIwAkACYACQAnACUACwAnAAkADQAnAAsADgAnAA0ADgAPACcAEAARAA8AEQASAA8AEgAnAA8AJwASABMAFAAnABMAKAAlACcAKAAnABQAJgAlACgAKAAUACkAKgAmACgAKgAoACkAKQAUACsAKgApACsAKwAUABUAFgArABUAFwArABYABQArABcAGAAFABcABQAqACsALAAqAAUAGgAsAAUAGwAsABoAHAAsABsAHQAsABwALQAqACwALAAqAC0ALgAsAB0AHgAuAB0ALAAvACoALwAmACoAIwAmAC8AMAAvACwAMAAjAC8AMAAsAC4AMQAjADAAMQAwAC4ADAAjADEALgAMADEAHwAuAB4AGQAMAC4AHwAZAC4AIAAZAB8AIQAZACAA"), 21.465546, PackedByteArray("AAABAAIAAAACAAMABAABAAAABQABAAQABgABAAUABwAFAAQACAAGAAUABwAJAAUACAAFAAoACwAFAAkACgAFAAwADQAFAAsADgAFAA0ADgAPAAUAEAARAA8AEQASAA8AEgAFAA8ABQASABMAFAAFABMABQAUABUAFgAFABUABQAWABcAGAAFABcAGQAMAAUAGgAZAAUAGwAZABoAHAAZABsAHQAZABwAHgAZAB0AHwAZAB4AIAAZAB8AIQAZACAA")],
-"material": SubResource("StandardMaterial3D_f7bhg"),
+"material": ExtResource("3_j0a21"),
 "name": "mat1",
 "primitive": 3,
 "uv_scale": Vector4(9.977735, 9.977735, 0, 0),
@@ -95,113 +89,13 @@ shadow_mesh = SubResource("ArrayMesh_unirl")
 data = PackedVector3Array(-22.0847, 0.0341, 22.7614, -14.686, 0, 27.1602, -22.0889, 0, 27.159399, -27.1609, 0, 22.7655, -22.0889, 0, 27.159399, -27.1609, 0, 27.159399, -22.0847, 0.0341, 22.7614, -22.0889, 0, 27.159399, -27.1609, 0, 22.7655, -27.1617, 0.0782, 16.1096, -22.0847, 0.0341, 22.7614, -27.1609, 0, 22.7655, -14.686, 0, 22.7655, -14.686, 0, 27.1602, -22.0847, 0.0341, 22.7614, -21.4979, 0.48119998, 16.0292, -22.0847, 0.0341, 22.7614, -27.1617, 0.0782, 16.1096, -21.4979, 0.48119998, 16.0292, -14.686, 0, 22.7655, -22.0847, 0.0341, 22.7614, -27.1617, 0.0782, 16.1096, -22.0789, 0.0692, 9.1313, -21.4979, 0.48119998, 16.0292, -27.1609, 0, 9.1272, -22.0789, 0.0692, 9.1313, -27.1617, 0.0782, 16.1096, -14.701699, 0.83449996, 16.095499, -14.686, 0, 22.7655, -21.4979, 0.48119998, 16.0292, -27.1609, 0, 9.1272, -22.0889, 0, 2.9835, -22.0789, 0.0692, 9.1313, -21.4979, 0.48119998, 16.0292, -14.6196995, 1.2901, 9.284699, -14.701699, 0.83449996, 16.095499, -22.0789, 0.0692, 9.1313, -14.6196995, 1.2901, 9.284699, -21.4979, 0.48119998, 16.0292, -27.1609, 0, 2.9835, -22.0889, 0, 2.9835, -27.1609, 0, 9.1272, -7.4007998, 0, 16.1096, -14.686, 0, 22.7655, -14.701699, 0.83449996, 16.095499, -14.701699, 0.83449996, 16.095499, -14.6196995, 1.2901, 9.284699, -7.4007998, 0, 16.1096, -7.4007998, 0, 22.7655, -14.686, 0, 27.1602, -14.686, 0, 22.7655, -7.4007998, 0, 22.7655, -14.686, 0, 22.7655, -7.4007998, 0, 16.1096, -7.4007998, 0, 27.1602, -14.686, 0, 27.1602, -7.4007998, 0, 22.7655, -27.1609, 0, 2.9835, -22.0889, 0, -2.1746, -22.0889, 0, 2.9835, -27.1609, 0, -2.1746, -22.0889, 0, -2.1746, -27.1609, 0, 2.9835, 1.2297, 0, 22.7655, -7.4007998, 0, 27.1602, -7.4007998, 0, 22.7655, 1.2297, 0, 27.1602, -7.4007998, 0, 27.1602, 1.2297, 0, 22.7655, 1.2297, 0, 27.1602, 1.2297, 0, 22.7655, 8.0764, 0, 27.1602, 1.2297, 0, 22.7655, -7.4007998, 0, 22.7655, 1.2297, 0, 16.1096, 1.2297, 0, 16.1096, -7.4007998, 0, 22.7655, -7.4007998, 0, 16.1096, 8.0764, 0, 27.1602, 1.2297, 0, 22.7655, 8.059, 0.4723, 22.6926, 1.2297, 0, 22.7655, 1.2297, 0, 16.1096, 8.059, 0.4723, 22.6926, 14.384399, 0.0036, 22.7655, 8.0764, 0, 27.1602, 8.059, 0.4723, 22.6926, 14.384399, 0, 27.1602, 8.0764, 0, 27.1602, 14.384399, 0.0036, 22.7655, 8.059, 0.4723, 22.6926, 1.2297, 0, 16.1096, 8.011, 0.8951, 16.0549, 8.059, 0.4723, 22.6926, 8.011, 0.8951, 16.0549, 14.384399, 0.0036, 22.7655, 21.149899, 0, 22.7655, 14.384399, 0, 27.1602, 14.384399, 0.0036, 22.7655, 21.149899, 0, 27.1602, 14.384399, 0, 27.1602, 21.149899, 0, 22.7655, 21.149899, 0, 27.1602, 21.149899, 0, 22.7655, 27.1602, 0, 27.159399, 27.1602, 0, 27.159399, 21.149899, 0, 22.7655, 27.1602, 0, 22.7655, 27.1602, 0, 22.7655, 21.149899, 0, 22.7655, 27.1602, 0, 16.1096, 21.149899, 0, 22.7655, 14.384399, 0.0036, 22.7655, 21.149, 0.028299998, 16.108799, 27.1602, 0, 16.1096, 21.149899, 0, 22.7655, 21.149, 0.028299998, 16.108799, 21.149, 0.028299998, 16.108799, 14.384399, 0.0036, 22.7655, 14.4465, 1.8780999, 16.039999, 14.384399, 0.0036, 22.7655, 8.011, 0.8951, 16.0549, 14.4465, 1.8780999, 16.039999, 21.149, 0.028299998, 16.108799, 21.1391, 0.3902, 9.1529, 27.1602, 0, 16.1096, 27.1602, 0, 16.1096, 21.1391, 0.3902, 9.1529, 27.1602, 0, 9.1272, 14.4465, 1.8780999, 16.039999, 14.5012, 1.2387999, 9.3294, 21.149, 0.028299998, 16.108799, 14.4465, 1.8780999, 16.039999, 8.011, 0.8951, 16.0549, 14.5012, 1.2387999, 9.3294, 21.149, 0.028299998, 16.108799, 14.5012, 1.2387999, 9.3294, 21.1391, 0.3902, 9.1529, 21.1391, 0.3902, 9.1529, 21.149899, 0, 2.9835, 27.1602, 0, 9.1272, 27.1602, 0, 9.1272, 21.149899, 0, 2.9835, 27.1602, 0, 2.9835, 14.5012, 1.2387999, 9.3294, 14.384399, 0, 2.9835, 21.1391, 0.3902, 9.1529, 21.1391, 0.3902, 9.1529, 14.384399, 0, 2.9835, 21.149899, 0, 2.9835, 14.5012, 1.2387999, 9.3294, 8.011, 0.8951, 16.0549, 8.0764, 0, 9.1272, 14.5012, 1.2387999, 9.3294, 8.0764, 0, 9.1272, 14.384399, 0, 2.9835, 21.149899, 0, 2.9835, 21.149899, 0, -2.1746, 27.1602, 0, 2.9835, 21.149899, 0, 2.9835, 14.384399, 0, 2.9835, 21.149899, 0, -2.1746, 27.1602, 0, 2.9835, 21.149899, 0, -2.1746, 27.1602, 0, -2.1746, 27.1602, 0, -2.1746, 21.149899, 0, -2.1746, 27.1602, 0, -7.5432, 8.011, 0.8951, 16.0549, 1.2297, 0, 9.1272, 8.0764, 0, 9.1272, 1.2297, 0, 16.1096, 1.2297, 0, 9.1272, 8.011, 0.8951, 16.0549, 14.384399, 0, 2.9835, 8.0764, 0, 9.1272, 7.9944, -0.1459, 3.0921, 8.0764, 0, 9.1272, 1.2297, 0, 9.1272, 7.9944, -0.1459, 3.0921, 1.2297, 0, 16.1096, -7.1247997, 1.3102, 9.312799, 1.2297, 0, 9.1272, -7.4007998, 0, 16.1096, -7.1247997, 1.3102, 9.312799, 1.2297, 0, 16.1096, -7.4007998, 0, 16.1096, -14.6196995, 1.2901, 9.284699, -7.1247997, 1.3102, 9.312799, 1.2297, 0, 9.1272, -7.1247997, 1.3102, 9.312799, 1.2181, -0.1085, 2.9893, 7.9944, -0.1459, 3.0921, 1.2297, 0, 9.1272, 1.2181, -0.1085, 2.9893, -7.1247997, 1.3102, 9.312799, -14.6196995, 1.2901, 9.284699, -7.3917, 0.1028, 2.9902, 1.2181, -0.1085, 2.9893, -7.1247997, 1.3102, 9.312799, -7.3917, 0.1028, 2.9902, 7.9944, -0.1459, 3.0921, 1.2181, -0.1085, 2.9893, 7.8434997, 0.18239999, -2.2127, 7.9944, -0.1459, 3.0921, 7.8434997, 0.18239999, -2.2127, 14.384399, 0, 2.9835, 1.2181, -0.1085, 2.9893, -7.3917, 0.1028, 2.9902, 1.1583999, -0.51159996, -2.1969, 7.8434997, 0.18239999, -2.2127, 1.2181, -0.1085, 2.9893, 1.1583999, -0.51159996, -2.1969, 1.1583999, -0.51159996, -2.1969, -7.3917, 0.1028, 2.9902, -7.4007998, 0, -2.1746, -7.4007998, 0, -2.1746, -7.3602, 0.4852, -7.5340996, 1.1583999, -0.51159996, -2.1969, -7.3917, 0.1028, 2.9902, -14.6196995, 1.2901, 9.284699, -14.687599, 0.1626, 2.9935, -22.0789, 0.0692, 9.1313, -14.687599, 0.1626, 2.9935, -14.6196995, 1.2901, 9.284699, -7.3917, 0.1028, 2.9902, -14.687599, 0.1626, 2.9935, -7.4007998, 0, -2.1746, -22.0889, 0, 2.9835, -14.687599, 0.1626, 2.9935, -22.0789, 0.0692, 9.1313, 1.1583999, -0.51159996, -2.1969, -7.3602, 0.4852, -7.5340996, 1.2297, 0, -7.5432, 1.1583999, -0.51159996, -2.1969, 1.2297, 0, -7.5432, 7.8434997, 0.18239999, -2.2127, -7.3602, 0.4852, -7.5340996, -6.9962997, 0.88299996, -13.1149, 1.2297, 0, -7.5432, -22.0889, 0, 2.9835, -14.686, 0, -2.1746, -14.687599, 0.1626, 2.9935, -7.4007998, 0, -2.1746, -14.687599, 0.1626, 2.9935, -14.686, 0, -2.1746, -22.0889, 0, -2.1746, -14.686, 0, -2.1746, -22.0889, 0, 2.9835, -14.686, 0, -2.1746, -14.686, 0, -7.5432, -7.4007998, 0, -2.1746, -22.0889, 0, -2.1746, -14.686, 0, -7.5432, -14.686, 0, -2.1746, -7.4007998, 0, -2.1746, -14.686, 0, -7.5432, -7.3602, 0.4852, -7.5340996, -22.0889, 0, -7.5432, -14.686, 0, -7.5432, -22.0889, 0, -2.1746, -27.1609, 0, -2.1746, -22.0889, 0, -7.5432, -22.0889, 0, -2.1746, -27.1609, 0, -7.5432, -22.0889, 0, -7.5432, -27.1609, 0, -2.1746, -27.1609, 0, -7.5432, -22.0889, 0, -12.681399, -22.0889, 0, -7.5432, -22.0889, 0, -12.681399, -14.686, 0, -7.5432, -22.0889, 0, -7.5432, -27.1609, 0, -12.681399, -22.0889, 0, -12.681399, -27.1609, 0, -7.5432, -14.686, 0, -7.5432, -14.6851, 0.2342, -12.695499, -7.3602, 0.4852, -7.5340996, -14.6851, 0.2342, -12.695499, -14.686, 0, -7.5432, -22.0889, 0, -12.681399, -7.3602, 0.4852, -7.5340996, -14.6851, 0.2342, -12.695499, -6.9962997, 0.88299996, -13.1149, -27.1609, 0, -12.681399, -22.0889, 0, -19.068699, -22.0889, 0, -12.681399, -22.0889, 0, -19.068699, -14.6851, 0.2342, -12.695499, -22.0889, 0, -12.681399, -27.1609, 0, -19.068699, -22.0889, 0, -19.068699, -27.1609, 0, -12.681399, -14.6851, 0.2342, -12.695499, -14.686, 0.0358, -19.072899, -6.9962997, 0.88299996, -13.1149, -14.686, 0.0358, -19.072899, -14.6851, 0.2342, -12.695499, -22.0889, 0, -19.068699, -27.1609, 0, -19.068699, -22.0889, 0, -27.1602, -22.0889, 0, -19.068699, -22.0889, 0, -27.1602, -14.686, 0.0358, -19.072899, -22.0889, 0, -19.068699, -27.1609, 0, -27.1602, -22.0889, 0, -27.1602, -27.1609, 0, -19.068699, -6.9962997, 0.88299996, -13.1149, -14.686, 0.0358, -19.072899, -7.1877, 1.2017, -19.303299, -14.686, 0, -27.1602, -14.686, 0.0358, -19.072899, -22.0889, 0, -27.1602, -7.1877, 1.2017, -19.303299, -14.686, 0.0358, -19.072899, -7.4007998, 0, -27.1602, -7.4007998, 0, -27.1602, -14.686, 0.0358, -19.072899, -14.686, 0, -27.1602, 1.2297, 0, -27.1602, -7.1877, 1.2017, -19.303299, -7.4007998, 0, -27.1602, 1.2297, 0, -19.068699, -7.1877, 1.2017, -19.303299, 1.2297, 0, -27.1602, 1.2297, 0, -19.068699, -6.9962997, 0.88299996, -13.1149, -7.1877, 1.2017, -19.303299, 1.2297, 0, -19.068699, 1.2297, 0, -27.1602, 7.9926996, 0.95699996, -19.3928, 7.9926996, 0.95699996, -19.3928, 1.2297, 0, -27.1602, 8.0764, 0, -27.1602, 14.384399, 0, -27.1602, 7.9926996, 0.95699996, -19.3928, 8.0764, 0, -27.1602, 1.2297, 0, -12.681399, -6.9962997, 0.88299996, -13.1149, 1.2297, 0, -19.068699, 1.2297, 0, -7.5432, -6.9962997, 0.88299996, -13.1149, 1.2297, 0, -12.681399, 7.9860997, -0.0374, -12.9185, 1.2297, 0, -19.068699, 7.9926996, 0.95699996, -19.3928, 1.2297, 0, -12.681399, 1.2297, 0, -19.068699, 7.9860997, -0.0374, -12.9185, 14.401, 0.4903, -19.150799, 7.9926996, 0.95699996, -19.3928, 14.384399, 0, -27.1602, 14.401, 0.4903, -19.150799, 7.9860997, -0.0374, -12.9185, 7.9926996, 0.95699996, -19.3928, 21.149899, 0, -27.1602, 14.401, 0.4903, -19.150799, 14.384399, 0, -27.1602, 1.2297, 0, -7.5432, 1.2297, 0, -12.681399, 7.9263997, -0.2181, -7.4694, 7.9263997, -0.2181, -7.4694, 1.2297, 0, -12.681399, 7.9860997, -0.0374, -12.9185, 7.8434997, 0.18239999, -2.2127, 1.2297, 0, -7.5432, 7.9263997, -0.2181, -7.4694, 7.8434997, 0.18239999, -2.2127, 7.9263997, -0.2181, -7.4694, 14.415, 1.2105, -2.2301, 14.384399, 0, 2.9835, 7.8434997, 0.18239999, -2.2127, 14.415, 1.2105, -2.2301, 21.149899, 0, -2.1746, 14.384399, 0, 2.9835, 14.415, 1.2105, -2.2301, 14.415, 1.2105, -2.2301, 7.9263997, -0.2181, -7.4694, 14.484699, 0.0142, -7.4652996, 14.415, 1.2105, -2.2301, 14.484699, 0.0142, -7.4652996, 21.149899, 0, -2.1746, 7.9263997, -0.2181, -7.4694, 7.9860997, -0.0374, -12.9185, 14.484699, 0.0142, -7.4652996, 21.149899, 0, -2.1746, 14.484699, 0.0142, -7.4652996, 21.149899, 0, -7.5432, 27.1602, 0, -7.5432, 21.149899, 0, -2.1746, 21.149899, 0, -7.5432, 27.1602, 0, -7.5432, 21.149899, 0, -7.5432, 27.1602, 0, -12.681399, 27.1602, 0, -12.681399, 21.149899, 0, -7.5432, 21.149899, 0, -12.681399, 21.149899, 0, -7.5432, 14.484699, 0.0142, -7.4652996, 21.149899, 0, -12.681399, 27.1602, 0, -12.681399, 21.149899, 0, -12.681399, 27.1602, 0, -19.068699, 14.484699, 0.0142, -7.4652996, 7.9860997, -0.0374, -12.9185, 14.4366, 0.8311, -12.8439, 21.149899, 0, -12.681399, 14.484699, 0.0142, -7.4652996, 14.4366, 0.8311, -12.8439, 14.4366, 0.8311, -12.8439, 7.9860997, -0.0374, -12.9185, 14.401, 0.4903, -19.150799, 27.1602, 0, -19.068699, 21.149899, 0, -12.681399, 21.149899, 0, -19.068699, 21.149899, 0, -12.681399, 14.4366, 0.8311, -12.8439, 21.149899, 0, -19.068699, 21.149899, 0, -19.068699, 14.4366, 0.8311, -12.8439, 14.401, 0.4903, -19.150799, 27.1602, 0, -19.068699, 21.149899, 0, -19.068699, 27.1602, 0, -27.1602, 21.149899, 0, -19.068699, 14.401, 0.4903, -19.150799, 21.149899, 0, -27.1602, 27.1602, 0, -27.1602, 21.149899, 0, -19.068699, 21.149899, 0, -27.1602)
 
 [node name="ForestContainer" type="Node3D"]
-
-[node name="Forest2" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 60, 0, 500)
-
-[node name="pine1_0" type="Node3D" parent="Forest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0712745, 5.9796066)
-
-[node name="Object_4" type="MeshInstance3D" parent="Forest2/pine1_0"]
-mesh = SubResource("ArrayMesh_0yp7a")
-skeleton = NodePath("")
-
-[node name="obj1_1" type="Node3D" parent="Forest2"]
-
-[node name="Object_6" type="MeshInstance3D" parent="Forest2/obj1_1"]
-mesh = SubResource("ArrayMesh_3c5ma")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest2"]
-shape = SubResource("ConcavePolygonShape3D_1vwjq")
-
-[node name="Forest" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 60, 0, 240)
-
-[node name="pine1_0" type="Node3D" parent="Forest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.424231, -0.24205919, -3.007927)
-
-[node name="Object_4" type="MeshInstance3D" parent="Forest/pine1_0"]
-mesh = SubResource("ArrayMesh_0yp7a")
-skeleton = NodePath("")
-
-[node name="obj1_1" type="Node3D" parent="Forest"]
-
-[node name="Object_6" type="MeshInstance3D" parent="Forest/obj1_1"]
-mesh = SubResource("ArrayMesh_3c5ma")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest"]
-shape = SubResource("ConcavePolygonShape3D_1vwjq")
-
-[node name="Forest5" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 60, 0, -20)
-
-[node name="pine1_0" type="Node3D" parent="Forest5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.3961067)
-
-[node name="Object_4" type="MeshInstance3D" parent="Forest5/pine1_0"]
-mesh = SubResource("ArrayMesh_0yp7a")
-skeleton = NodePath("")
-
-[node name="obj1_1" type="Node3D" parent="Forest5"]
-
-[node name="Object_6" type="MeshInstance3D" parent="Forest5/obj1_1"]
-mesh = SubResource("ArrayMesh_3c5ma")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest5"]
-shape = SubResource("ConcavePolygonShape3D_1vwjq")
-
-[node name="Forest6" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 320, 0, -20)
-
-[node name="pine1_0" type="Node3D" parent="Forest6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28734004, 0)
-
-[node name="Object_4" type="MeshInstance3D" parent="Forest6/pine1_0"]
-mesh = SubResource("ArrayMesh_0yp7a")
-skeleton = NodePath("")
-
-[node name="obj1_1" type="Node3D" parent="Forest6"]
-
-[node name="Object_6" type="MeshInstance3D" parent="Forest6/obj1_1"]
-mesh = SubResource("ArrayMesh_3c5ma")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest6"]
-shape = SubResource("ConcavePolygonShape3D_1vwjq")
-
-[node name="Forest7" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 320, 0, 240)
-
-[node name="pine1_0" type="Node3D" parent="Forest7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1324463, 0, -21.538906)
-
-[node name="Object_4" type="MeshInstance3D" parent="Forest7/pine1_0"]
-mesh = SubResource("ArrayMesh_0yp7a")
-skeleton = NodePath("")
-
-[node name="pine1_1" type="Node3D" parent="Forest7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4828377, 0, 32.656097)
-
-[node name="Object_4" type="MeshInstance3D" parent="Forest7/pine1_1"]
-mesh = SubResource("ArrayMesh_0yp7a")
-skeleton = NodePath("")
-
-[node name="obj1_1" type="Node3D" parent="Forest7"]
-
-[node name="Object_6" type="MeshInstance3D" parent="Forest7/obj1_1"]
-mesh = SubResource("ArrayMesh_3c5ma")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest7"]
-shape = SubResource("ConcavePolygonShape3D_1vwjq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 
 [node name="Forest8" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 320, 0, 500)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 320, 0, 510)
 
 [node name="pine1_0" type="Node3D" parent="Forest8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.799999, 0, -18.599998)
 
 [node name="Object_4" type="MeshInstance3D" parent="Forest8/pine1_0"]
 mesh = SubResource("ArrayMesh_0yp7a")
@@ -216,10 +110,87 @@ skeleton = NodePath("")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest8"]
 shape = SubResource("ConcavePolygonShape3D_1vwjq")
 
+[node name="Forest9" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 48.4, 0, 510)
+
+[node name="pine1_0" type="Node3D" parent="Forest9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000004, 0, 3.2000046)
+
+[node name="Object_4" type="MeshInstance3D" parent="Forest9/pine1_0"]
+mesh = SubResource("ArrayMesh_0yp7a")
+skeleton = NodePath("")
+
+[node name="obj1_1" type="Node3D" parent="Forest9"]
+
+[node name="Object_6" type="MeshInstance3D" parent="Forest9/obj1_1"]
+mesh = SubResource("ArrayMesh_3c5ma")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest9"]
+shape = SubResource("ConcavePolygonShape3D_1vwjq")
+
+[node name="Forest10" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -223.2, 0, 520)
+
+[node name="pine1_0" type="Node3D" parent="Forest10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19999695, 0, -13.400002)
+
+[node name="Object_4" type="MeshInstance3D" parent="Forest10/pine1_0"]
+mesh = SubResource("ArrayMesh_0yp7a")
+skeleton = NodePath("")
+
+[node name="obj1_1" type="Node3D" parent="Forest10"]
+
+[node name="Object_6" type="MeshInstance3D" parent="Forest10/obj1_1"]
+mesh = SubResource("ArrayMesh_3c5ma")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest10"]
+shape = SubResource("ConcavePolygonShape3D_1vwjq")
+
+[node name="Forest11" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 320, 0, 238.4)
+
+[node name="pine1_0" type="Node3D" parent="Forest11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.599998, 0, -20.6)
+
+[node name="Object_4" type="MeshInstance3D" parent="Forest11/pine1_0"]
+mesh = SubResource("ArrayMesh_0yp7a")
+skeleton = NodePath("")
+
+[node name="obj1_1" type="Node3D" parent="Forest11"]
+
+[node name="Object_6" type="MeshInstance3D" parent="Forest11/obj1_1"]
+mesh = SubResource("ArrayMesh_3c5ma")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest11"]
+shape = SubResource("ConcavePolygonShape3D_1vwjq")
+
+[node name="Forest12" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 48.4, 0, 238.4)
+
+[node name="pine1_0" type="Node3D" parent="Forest12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 0, -1.800003)
+
+[node name="Object_4" type="MeshInstance3D" parent="Forest12/pine1_0"]
+mesh = SubResource("ArrayMesh_0yp7a")
+skeleton = NodePath("")
+
+[node name="obj1_1" type="Node3D" parent="Forest12"]
+
+[node name="Object_6" type="MeshInstance3D" parent="Forest12/obj1_1"]
+mesh = SubResource("ArrayMesh_3c5ma")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest12"]
+shape = SubResource("ConcavePolygonShape3D_1vwjq")
+
 [node name="Forest13" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -210.34808, 0, -20)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -223.2, 0, 248.4)
 
 [node name="pine1_0" type="Node3D" parent="Forest13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7999992, 0, -7.799999)
 
 [node name="Object_4" type="MeshInstance3D" parent="Forest13/pine1_0"]
 mesh = SubResource("ArrayMesh_0yp7a")
@@ -235,10 +206,10 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_1vwjq")
 
 [node name="Forest14" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -210.34808, 0, 240)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 307, 0, -33.2)
 
 [node name="pine1_0" type="Node3D" parent="Forest14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.987133, 0.052946676, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5999985, 0, -6.5999994)
 
 [node name="Object_4" type="MeshInstance3D" parent="Forest14/pine1_0"]
 mesh = SubResource("ArrayMesh_0yp7a")
@@ -254,10 +225,10 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_1vwjq")
 
 [node name="Forest15" type="StaticBody3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -210.34808, 0, 500)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 35.9, 0, -33.2)
 
 [node name="pine1_0" type="Node3D" parent="Forest15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28734073, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, 0, -4.3999996)
 
 [node name="Object_4" type="MeshInstance3D" parent="Forest15/pine1_0"]
 mesh = SubResource("ArrayMesh_0yp7a")
@@ -270,4 +241,23 @@ mesh = SubResource("ArrayMesh_3c5ma")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest15"]
+shape = SubResource("ConcavePolygonShape3D_1vwjq")
+
+[node name="Forest16" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -235.7, 0, -23.2)
+
+[node name="pine1_0" type="Node3D" parent="Forest16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.399998, 0, -0.39999914)
+
+[node name="Object_4" type="MeshInstance3D" parent="Forest16/pine1_0"]
+mesh = SubResource("ArrayMesh_0yp7a")
+skeleton = NodePath("")
+
+[node name="obj1_1" type="Node3D" parent="Forest16"]
+
+[node name="Object_6" type="MeshInstance3D" parent="Forest16/obj1_1"]
+mesh = SubResource("ArrayMesh_3c5ma")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest16"]
 shape = SubResource("ConcavePolygonShape3D_1vwjq")

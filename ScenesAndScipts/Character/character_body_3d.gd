@@ -26,15 +26,21 @@ var default_height = 1.7
 var crouch_height = 1.0  
 var crouch_speed_transition = 10.0 
 
+@onready var interaction_ray = $Camera3D/RayCast3D 
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	mask_visible=get_tree().get_nodes_in_group("enemigos")
+	mask_visible=get_tree().get_nodes_in_group("mask_visible")
+	interaction_ray.add_exception(self)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		head.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			intentar_cavar()
 
 func _physics_process(delta):
 	# 1. Aplicar Gravedad
@@ -130,3 +136,27 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		mask_canvas_layer.visible=true
 		for object in mask_visible:
 			object.visible=true
+
+
+func intentar_cavar():
+	print("--- INTENTO DE CAVAR ---")
+	
+	# 1. Forzamos al raycast a actualizarse YA MISMO (por si moviste la cámara rápido)
+	interaction_ray.force_raycast_update()
+	
+	if interaction_ray.is_colliding():
+		var collider = interaction_ray.get_collider()
+		print("Colisioné con: ", collider.name) # ¿Dice StaticBody3D?
+		
+		var punto_golpe = interaction_ray.get_collision_point()
+		var objeto_padre = collider.get_parent()
+		print(objeto_padre)
+		if objeto_padre.has_method("cavar"):
+			objeto_padre.cavar(punto_golpe, 1.5, 0.4)
+			print("¡CAVANDO!")
+		else:
+			print("El objeto ", objeto_padre.name, " no tiene el script con la función 'cavar'")
+	else:
+		print("El RayCast no toca nada. Posibles causas:")
+		print("1. El rayo es muy corto (Target Position Z).")
+		print("2. El StaticBody no tiene CollisionShape.")
