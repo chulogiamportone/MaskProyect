@@ -1,0 +1,5 @@
+Zomok: Are you ready?
+you: Yes.
+Zomok: You know what must be done. Follow the trail of the mask.
+you: It is time to see Mother again.
+do AutoLoad.fin_cinematica_0_0()

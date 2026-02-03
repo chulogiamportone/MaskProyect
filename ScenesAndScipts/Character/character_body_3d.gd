@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var WALKING_SPEED = 5.0
 @export var RUNNING_SPEED = 9.0
 @export var CROUCH_SPEED = 3.0
-@export var JUMP_VELOCITY = 4.5
+@export var JUMP_VELOCITY = 6
 @export var MOUSE_SENSITIVITY = 0.003
 @export var mask_canvas_layer:CanvasLayer
 var mask_visible:Array[Node]
@@ -27,11 +27,41 @@ var crouch_height = 1.0
 var crouch_speed_transition = 10.0 
 
 @onready var interaction_ray = $Camera3D/RayCast3D 
+var tiene_pala : bool = false
+@onready var visual_pala_mano = $schaufel# Ajusta la ruta si es distinta
+@export var scene_pala : PackedScene=preload("uid://jm45o6r0m1ly")
+
+var tiene_craneo : bool = false
+var tiene_mascara : bool = false
+var tiene_brazo : bool = false
+
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $MusicSection1
+@onready var cavar: AudioStreamPlayer3D = $Cavar
+@onready var fire_audio: AudioStreamPlayer3D = $Fire
+@onready var quema: AudioStreamPlayer3D = $Quema
+@onready var quema_2: AudioStreamPlayer3D = $Quema2
+@onready var music_section_2: AudioStreamPlayer3D = $MusicSection2
+@onready var final: AudioStreamPlayer3D = $final
+
+
+@export var SEVERED_ARM : PackedScene
+
+var block:bool=false
+
+@onready var sub_viewport_container: SubViewportContainer = $"../Object/SubViewportContainer"
+const OBJECTS = preload("uid://bb6abjwj6in2j")
+
+@onready var label_mision: Label = $"../Mision/Label"
+
+
+
 
 func _ready():
+	visual_pala_mano.visible=false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mask_visible=get_tree().get_nodes_in_group("mask_visible")
 	interaction_ray.add_exception(self)
+	Dialogic.start("0_0")
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -41,6 +71,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			intentar_cavar()
+	
 
 func _physics_process(delta):
 	# 1. Aplicar Gravedad
@@ -54,18 +85,21 @@ func _physics_process(delta):
 	# 3. Lógica de Agacharse (Crouch)
 	var current_speed = WALKING_SPEED
 	
-	if Input.is_action_just_pressed("action") and !is_mask_active:
+	if Input.is_action_just_pressed("action") and !is_mask_active and !block:
 		is_mask_active=true
-		
+		mask_canvas_layer.visible=true
 		animation_player.play("mask_move")
 		
 	else:
-		if Input.is_action_just_pressed("action") and is_mask_active:
+		if Input.is_action_just_pressed("action") and is_mask_active and !block:
 			mask_canvas_layer.visible=false
 			is_mask_active=false
+			
 			for object in mask_visible:
 				object.visible=false
 			animation_player.play_backwards("mask_move")
+	if block:
+		is_mask_active=false
 	
 	if Input.is_action_pressed("crouch"):
 		current_speed = CROUCH_SPEED
@@ -130,33 +164,126 @@ func update_animations(input_dir: Vector2):
 			# Caminando normal
 			anim_player.play("run/Root|Run", blend_time) # Asumiendo nombre "Walk" en librería "animation"
 
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if is_mask_active:
+var block_animation:bool=false
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	if is_mask_active and !block_animation:
+		block_animation=true
 		mask_canvas_layer.visible=true
+		block=false
 		for object in mask_visible:
 			object.visible=true
+		
+		var object_mascara=await OBJECTS.instantiate()
+		sub_viewport_container.add_child(object_mascara)
+		object_mascara.active_object("Mascara")
+		
 
 
 func intentar_cavar():
-	print("--- INTENTO DE CAVAR ---")
-	
-	# 1. Forzamos al raycast a actualizarse YA MISMO (por si moviste la cámara rápido)
 	interaction_ray.force_raycast_update()
 	
 	if interaction_ray.is_colliding():
-		var collider = interaction_ray.get_collider()
-		print("Colisioné con: ", collider.name) # ¿Dice StaticBody3D?
 		
-		var punto_golpe = interaction_ray.get_collision_point()
-		var objeto_padre = collider.get_parent()
-		print(objeto_padre)
-		if objeto_padre.has_method("cavar"):
-			objeto_padre.cavar(punto_golpe, 1.5, 0.4)
-			print("¡CAVANDO!")
-		else:
-			print("El objeto ", objeto_padre.name, " no tiene el script con la función 'cavar'")
+		var objeto = interaction_ray.get_collider()
+		
+		# CASO 1: Es un objeto agarrable (La pala del suelo)
+		if objeto.has_method("interactuar"):
+			objeto.interactuar(self)
+			return # Ya hicimos algo, no seguimos
+			
+		# CASO 2: Es el suelo y queremos cavar
+		# Buscamos si el objeto o sus padres tienen la función cavar
+		var objeto_cavar = objeto
+		if not objeto_cavar.has_method("cavar") and objeto.get_parent().has_method("cavar"):
+			objeto_cavar = objeto.get_parent()
+			
+		if objeto_cavar.has_method("cavar"):
+			if tiene_pala:
+				# SALTO DE SEGURIDAD (El truco que ya tenías)
+				global_position.y += 0.2
+				velocity.y = 0
+				cavar.reproducir_segmento()
+				objeto_cavar.cavar(interaction_ray.get_collision_point(), 1.5, 0.5)
+			else:
+				print("Necesito una pala para hacer eso.")
+				
+func equipar_pala():
+	if !tiene_craneo:
+		tiene_pala = true
+		visual_pala_mano.visible = true # ¡Ahora la ves en tu mano!
+		print("¡Has conseguido la pala!")
+		Dialogic.start("0_1")
+	
+func soltar_pala():
+	# 1. Lógica interna
+	tiene_pala = false
+	visual_pala_mano.visible = false
+	print("Pala soltada")
+	
+	# 2. Instanciar el objeto físico en el mundo
+	if scene_pala:
+		var pala_fisica = scene_pala.instantiate()
+		
+		# La añadimos a la escena principal (no al player, para que no se mueva con nosotros)
+		get_parent().add_child(pala_fisica)
+		
+		# 3. Posicionarla frente a nosotros
+		# Usamos la posición de la cámara (head) y la adelantamos 1.5 metros
+		pala_fisica.global_position = head.global_position - head.global_transform.basis.z * 1.5
+		
+		# (Opcional) Tirarla con un poco de fuerza hacia adelante
+		pala_fisica.linear_velocity = -head.global_transform.basis.z * 5.0 # Impulso de 5 metros/seg
+		pala_fisica.angular_velocity = Vector3(randf(), randf(), randf()) * 5 # Un giro random para que se vea cool
 	else:
-		print("El RayCast no toca nada. Posibles causas:")
-		print("1. El rayo es muy corto (Target Position Z).")
-		print("2. El StaticBody no tiene CollisionShape.")
+		printerr("ERROR: No has asignado la escena 'scene_pala' en el Inspector del Player")
+		
+func soltar_brazo():
+
+	# 2. Instanciar el objeto físico en el mundo
+	if SEVERED_ARM:
+		var pala_fisica = SEVERED_ARM.instantiate()
+		
+		# La añadimos a la escena principal (no al player, para que no se mueva con nosotros)
+		get_parent().add_child(pala_fisica)
+		
+		# 3. Posicionarla frente a nosotros
+		# Usamos la posición de la cámara (head) y la adelantamos 1.5 metros
+		pala_fisica.global_position = head.global_position - head.global_transform.basis.z * 1.5
+		
+		# (Opcional) Tirarla con un poco de fuerza hacia adelante
+		
+	else:
+		printerr("ERROR: No has asignado la escena 'SEVERED_ARM' en el Inspector del Player")
+
+
+func equipar_craneo():
+	tiene_craneo = true
+	var object_craneo=OBJECTS.instantiate()
+	sub_viewport_container.add_child(object_craneo)
+	object_craneo.active_object("Craneo")
+	print("¡Has conseguido el craneo!")
+	audio_stream_player_3d.play()
+	#Texto2, el primero en cambiar por codigo
+	label_mision.text="Follow the blood, ear your intuition."
+	
+	
+func fin_audio():
+	audio_stream_player_3d.fade_out_y_apagar(2.0)
+
+func equipar_brazo():
+	tiene_brazo = true
+	print("¡Has conseguido el brazo!")
+	var object_brazo= OBJECTS.instantiate()
+	sub_viewport_container.add_child(object_brazo)
+	object_brazo.active_object("Brazo")
+	#Texto6
+	label_mision.text="Place the sacrifices next to the ceremonial skull."
+
+
+func _on_music_section_2_finished() -> void:
+	#Texto5
+	label_mision.text="Sacrifice your arm,give them some blood."
+
+
+func start_wake_up()->void:
+	animation_player.play("inicio")

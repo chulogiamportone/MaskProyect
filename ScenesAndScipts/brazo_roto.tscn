@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbq543hae0l43"]
+
+[ext_resource type="Script" uid="uid://bhgsf0c5drteb" path="res://ScenesAndScipts/Scipts/brazo_roto.gd" id="1_srcdl"]
+[ext_resource type="PackedScene" uid="uid://bw4vde1wih8w3" path="res://Assets/nuevosAssets/severed_arm.glb" id="2_nuc7o"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_srcdl"]
+radius = 0.1875
+height = 1.8076782
+
+[node name="BrazoRoto" type="RigidBody3D"]
+script = ExtResource("1_srcdl")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_nuc7o")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.478434e-08, -0.33822632)
+shape = SubResource("CapsuleShape3D_srcdl")

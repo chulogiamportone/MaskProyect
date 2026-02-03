@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://c4jcaf55yqu75"]
+[gd_scene load_steps=16 format=4 uid="uid://c4jcaf55yqu75"]
 
 [ext_resource type="Texture2D" uid="uid://cgfokc6gag2i5" path="res://Assets/nuevosAssets/ritual_table_0.jpg" id="1_g1obb"]
 [ext_resource type="Script" uid="uid://bb1e8trepyvon" path="res://ScenesAndScipts/ForestScenes/altar.gd" id="1_h77kv"]
 [ext_resource type="Texture2D" uid="uid://cm38c7ndvatc4" path="res://Assets/nuevosAssets/ritual_table_1.png" id="2_jrx0x"]
 [ext_resource type="Texture2D" uid="uid://cufd4d831oj8u" path="res://Assets/nuevosAssets/ritual_table_2.png" id="3_h77kv"]
 [ext_resource type="PackedScene" uid="uid://c6pk25vmgj3op" path="res://ScenesAndScipts/ForestScenes/fire.tscn" id="4_jrx0x"]
+[ext_resource type="PackedScene" uid="uid://0kg7llp17lmr" path="res://Assets/nuevosAssets/oni_mask.glb" id="6_kp3b4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqr3a"]
 resource_name = "RitualTable"
@@ -54,11 +55,51 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jrhix")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8ik58"]
-points = PackedVector3Array(41.422237, 129.08461, 61.33659, -53.51446, 0.82060665, -82.38888, -53.51447, 0.82059836, 82.388985, 54.832146, 0.5388572, -80.13774, 37.719093, 139.42574, -77.01399, -47.243416, 139.42574, 69.04482, 52.3674, 0.3764387, 82.92532, 61.626884, 91.616905, 84.98335, -59.307007, 109.377426, -83.27823, 61.626884, 91.616905, -84.98326, -60.532455, 91.60313, 84.98335, -47.744022, 128.76698, -66.076416, 56.31127, 128.7893, -63.720795, 59.891277, 109.03369, 82.56851, -39.28247, 139.42574, 77.014084, 61.626884, 59.762726, 50.444324, -59.306976, 109.3774, 83.278275, -60.532455, 91.60313, -84.98326, 52.367393, 0.3764445, -82.925224, 45.68004, 139.42574, -66.38277, 54.832153, 0.5388507, 80.13784, 61.626884, 59.762726, -50.427597, 61.810623, 108.605644, -48.470165, 49.580162, 121.95749, 74.8532, -60.078304, 110.723045, -47.96549, 59.891277, 109.03369, -82.56842, 61.801834, 108.59997, 48.47929, -60.078262, 110.723015, 47.98137, 44.02553, 136.84583, -74.190765)
+[sub_resource type="BoxShape3D" id="BoxShape3D_kp3b4"]
+size = Vector3(120.848145, 110.65998, 167.4498)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kp3b4"]
 radius = 20.969807
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h77kv"]
+radius = 65.512985
+
+[sub_resource type="Animation" id="Animation_3iswl"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_bd0cy"]
+resource_name = "mask_place"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gas Mask/Sketchfab_Scene:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333334, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.16156006, 2.6463509, -8.149452), Vector3(-0.16155893, -1.6144304, -2.3454556)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gas Mask/Sketchfab_Scene:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ubhsl"]
+_data = {
+&"RESET": SubResource("Animation_3iswl"),
+&"mask_place": SubResource("Animation_bd0cy")
+}
 
 [node name="Altar" type="StaticBody3D"]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
@@ -70,8 +111,8 @@ mesh = SubResource("ArrayMesh_mi4aj")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.24520855, -1.904697e-08, -0.4357439, 0, 0.5, -2.1855692e-08, 0.4357439, 1.0718406e-08, 0.24520855, 97.12453, 49.40683, -52.528137)
-shape = SubResource("ConvexPolygonShape3D_8ik58")
+transform = Transform3D(0.24520855, -1.904697e-08, -0.4357439, 0, 0.5, -2.1855692e-08, 0.4357439, 1.0718406e-08, 0.24520855, 96.91315, 77.23368, -53.26838)
+shape = SubResource("BoxShape3D_kp3b4")
 
 [node name="FireContainer" type="Node3D" parent="."]
 
@@ -143,6 +184,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.25907, 88.36702, -17.14006
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area4"]
 shape = SubResource("SphereShape3D_kp3b4")
 
+[node name="AreaMask" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 88.90918, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaMask"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.72618, 0, -52.956825)
+shape = SubResource("SphereShape3D_h77kv")
+
+[node name="Gas Mask" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 3.6483374, -0.54120344, 0, 1.6400105, 1.2039512, 97.991875, 118.69458, -45.110588)
+skeleton = NodePath("")
+metadata/extras = {
+"ant_landscape": {}
+}
+
+[node name="Sketchfab_Scene" parent="Gas Mask" instance=ExtResource("6_kp3b4")]
+transform = Transform3D(0.020000003, 1.110223e-16, 1.323489e-23, 2.646978e-23, -9.313226e-10, 0.020000001, -2.220446e-15, -0.060606066, -3.7252903e-09, -0.16156006, 2.6463509, -8.149452)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ubhsl")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 31.0
+
 [connection signal="body_entered" from="Area1" to="." method="_on_area_1_body_entered"]
 [connection signal="body_exited" from="Area1" to="." method="_on_area_1_body_exited"]
 [connection signal="body_entered" from="Area2" to="." method="_on_area_2_body_entered"]
@@ -151,3 +221,8 @@ shape = SubResource("SphereShape3D_kp3b4")
 [connection signal="body_exited" from="Area3" to="." method="_on_area_3_body_exited"]
 [connection signal="body_entered" from="Area4" to="." method="_on_area_4_body_entered"]
 [connection signal="body_exited" from="Area4" to="." method="_on_area_4_body_exited"]
+[connection signal="body_entered" from="AreaMask" to="." method="_on_area_mask_body_entered"]
+[connection signal="body_exited" from="AreaMask" to="." method="_on_area_mask_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

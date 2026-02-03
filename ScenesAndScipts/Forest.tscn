@@ -1,5 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://i321731nan7u"]
+[gd_scene load_steps=10 format=3 uid="uid://i321731nan7u"]
 
+[ext_resource type="Script" uid="uid://cjes1gjvsp4f3" path="res://ScenesAndScipts/Map.gd" id="1_01jp2"]
+[ext_resource type="Script" uid="uid://bpkl5h0lg1146" path="res://ScenesAndScipts/AutoLoad.gd" id="1_u50oo"]
+[ext_resource type="FontFile" uid="uid://bjgo5wymb121k" path="res://font/PlaywriteNZBasic-VariableFont_wght.ttf" id="6_gpkjy"]
 [ext_resource type="Environment" uid="uid://bcepvob2h1kp2" path="res://ScenesAndScipts/Forest.tres" id="7_u50oo"]
 [ext_resource type="PackedScene" uid="uid://bis78ifwr1v3r" path="res://ScenesAndScipts/Character/player.tscn" id="17_y8jx7"]
 [ext_resource type="Shader" uid="uid://b3jmiuycwx7k7" path="res://ScenesAndScipts/infrarojo.gdshader" id="25_sig7u"]
@@ -14,11 +17,12 @@ shader_parameter/vignette_strength = 1.270000060325
 shader_parameter/brightness_threshold = 0.1
 
 [node name="Map" type="Node3D"]
+script = ExtResource("1_01jp2")
 
 [node name="building" type="Node3D" parent="."]
 
 [node name="CharacterBody3D" parent="." node_paths=PackedStringArray("mask_canvas_layer") instance=ExtResource("17_y8jx7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -636.2487, 2.0183263, 95.887695)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -616.77704, 1.05, 105.93759)
 mask_canvas_layer = NodePath("../Googles")
 
 [node name="Googles" type="CanvasLayer" parent="."]
@@ -54,3 +58,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -926.6502, 356.9664, 241.8958
 light_color = Color(0.5019608, 0.61960787, 0.7607843, 1)
 light_energy = 3.0
 shadow_enabled = true
+
+[node name="Mision" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="Mision"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 70.0
+offset_right = -820.0
+offset_bottom = -950.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_gpkjy")
+theme_override_font_sizes/font_size = 28
+text = "Unearth Mom's Skull."
+vertical_alignment = 1
+
+[node name="Object" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Object"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inicio" type="Control" parent="Object"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Object/Inicio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Autoload" type="Node" parent="."]
+script = ExtResource("1_u50oo")
