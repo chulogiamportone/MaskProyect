@@ -100,10 +100,11 @@ func _process(_delta: float) -> void:
 					fire_5.visible=true
 			var verificacion:bool=true
 			for fire_count in fire_container.get_children():
-				if !fire.visible:
+				if !fire_count.visible:
 					verificacion=false
 				
 			if verificacion:
+				print("entro")
 				fire_mask.visible=true
 				body_active.fire_audio.play()
 				timer.start()

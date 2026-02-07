@@ -1,0 +1,21 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://bcepvob2h1kp2"]
+
+[ext_resource type="Sky" uid="uid://bb4lbn3hwjt2e" path="res://ScenesAndScipts/Envairoment/sky_dark.tres" id="1_3ntem"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_3ntem")
+ambient_light_source = 3
+ambient_light_color = Color(0.10980392, 0.13725491, 0.2, 1)
+ambient_light_energy = 0.2
+tonemap_mode = 2
+ssao_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.5176471, 0.5529412, 0.70980394, 1)
+fog_light_energy = 0.3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.6023435, 0.6588465, 0.7836293, 1)
+adjustment_enabled = true
+adjustment_contrast = 1.4
+adjustment_saturation = 0.5

@@ -1,0 +1,3 @@
+you: Ahhh. My face burns.
+[wait_input hide_text="false"]
+do AutoLoad.fin_burn()

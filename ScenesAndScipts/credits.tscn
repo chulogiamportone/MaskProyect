@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyesmdxo24pd7"]
+
+[ext_resource type="Texture2D" uid="uid://dw6ajwmug2uc3" path="res://Assets/logo/Creditos-nn.png" id="1_duvrl"]
+[ext_resource type="FontFile" uid="uid://bjgo5wymb121k" path="res://font/PlaywriteNZBasic-VariableFont_wght.ttf" id="2_uk5ju"]
+
+[node name="Credits" type="TextureRect"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_duvrl")
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1820.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -980.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uk5ju")
+theme_override_font_sizes/font_size = 20
+text = "X"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://cv1jkfiusf7cj"]
 
 [ext_resource type="Texture2D" uid="uid://bhwiq0khu1hf3" path="res://Assets/nuevosAssets/staff_0.png" id="1_cbi6h"]
-[ext_resource type="Script" uid="uid://bhgsf0c5drteb" path="res://ScenesAndScipts/Scipts/brazo_roto.gd" id="1_jlks2"]
+[ext_resource type="Script" uid="uid://bhgsf0c5drteb" path="res://ScenesAndScipts/Items/brazo_roto.gd" id="1_jlks2"]
 [ext_resource type="Script" uid="uid://dqdqs23rkanjr" path="res://ScenesAndScipts/ForestScenes/pentagrama_final.gd" id="1_omy0y"]
 [ext_resource type="Texture2D" uid="uid://bg3nxxcn6yoga" path="res://Assets/nuevosAssets/staff_1.png" id="2_rkoih"]
 [ext_resource type="Texture2D" uid="uid://b30iwdna81vts" path="res://Assets/nuevosAssets/staff_2.png" id="3_jlks2"]

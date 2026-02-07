@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=4 uid="uid://bis78ifwr1v3r"]
 
 [ext_resource type="Script" uid="uid://dtkb65sledglg" path="res://ScenesAndScipts/Character/character_body_3d.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://bbq543hae0l43" path="res://ScenesAndScipts/brazo_roto.tscn" id="2_2tc4j"]
+[ext_resource type="PackedScene" uid="uid://bbq543hae0l43" path="res://ScenesAndScipts/Items/brazo_roto.tscn" id="2_2tc4j"]
 [ext_resource type="PackedScene" uid="uid://xa4f2cv6axx7" path="res://ScenesAndScipts/Character/character.tscn" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://0kg7llp17lmr" path="res://Assets/nuevosAssets/oni_mask.glb" id="3_7fncg"]
 [ext_resource type="AudioStream" uid="uid://cnuqacl7pfwsi" path="res://Audio/(Sötét... Hideg... Vér...) (1).mp3" id="4_wvclx"]
@@ -113,6 +113,34 @@ tracks/4/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_2tc4j"]
+resource_name = "inicio"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5451748), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.3338318, 0.00035396218, 0), Vector3(0, 0.00035396218, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_8x1ce"]
 resource_name = "mask_move"
 tracks/0/type = "value"
@@ -150,34 +178,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false]
-}
-
-[sub_resource type="Animation" id="Animation_2tc4j"]
-resource_name = "inicio"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 1.5451748), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.3338318, 0.00035396218, 0), Vector3(0, 0.00035396218, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wvclx"]
@@ -286,7 +286,7 @@ target_position = Vector3(0, 0, -3)
 transform = Transform3D(-0.99955827, 0, -0.029718615, 0, 1, 0, 0.029718615, 0, -0.99955827, 0.004793644, -0.9926605, 0.26986754)
 
 [node name="Gas Mask" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.2, 3.0199157e-08, -5.769903e-09, -3.019916e-08, -0.2, 5.7699037e-09, -1.7484552e-08, 1.748456e-08, 0.066, -0.004, 1, -0.538)
+transform = Transform3D(-0.2, -1.5285484e-15, -5.769903e-09, 0, -0.2, 5.769903e-09, -1.7484556e-08, 1.7484556e-08, 0.066, -0.004, 1, -0.538)
 visible = false
 skeleton = NodePath("")
 metadata/extras = {
@@ -360,7 +360,7 @@ transform = Transform3D(0.012633906, -0.09915719, -0.002869657, 0.09669423, 0.01
 visible = false
 
 [node name="Cuchillo" parent="." instance=ExtResource("14_ck3qu")]
-transform = Transform3D(-0.014731939, 0.009638071, -0.024291512, 0.02613261, 0.005686746, -0.013592187, 0.00023790567, -0.027834665, -0.011188159, 0.31360257, 0.9967835, -0.25986505)
+transform = Transform3D(-0.014731939, 0.009638071, -0.024291512, 0.02613261, 0.0056867464, -0.013592187, 0.00023790567, -0.027834667, -0.011188159, 0.31360257, 0.9967835, -0.25986505)
 visible = false
 
 [node name="final" type="AudioStreamPlayer3D" parent="."]

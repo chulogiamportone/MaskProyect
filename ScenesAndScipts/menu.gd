@@ -1,12 +1,11 @@
 extends Control
 @onready var credits: TextureRect = $Credits
 
-const scene = preload("res://ScenesAndScipts/Forest.tscn")
+const scene = preload("res://ScenesAndScipts/ForestScenes/Forest.tscn")
 
 
 
-func _on_button_pressed() -> void:
-	credits.visible=false
+
 
 
 func _on_play_pressed() -> void:
@@ -25,3 +24,7 @@ func _on_credits_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_close_pressed() -> void:
+	credits.visible=false

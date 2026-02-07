@@ -29,7 +29,7 @@ var crouch_speed_transition = 10.0
 @onready var interaction_ray = $Camera3D/RayCast3D 
 var tiene_pala : bool = false
 @onready var visual_pala_mano = $schaufel# Ajusta la ruta si es distinta
-@export var scene_pala : PackedScene=preload("uid://jm45o6r0m1ly")
+@export var scene_pala : PackedScene=preload("res://ScenesAndScipts/Items/pala.tscn")
 
 var tiene_craneo : bool = false
 var tiene_mascara : bool = false
@@ -63,7 +63,7 @@ func _ready():
 	interaction_ray.add_exception(self)
 	Dialogic.start("0_0")
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		head.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
@@ -165,6 +165,7 @@ func update_animations(input_dir: Vector2):
 			anim_player.play("run/Root|Run", blend_time) # Asumiendo nombre "Walk" en librería "animation"
 
 var block_animation:bool=false
+
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	if is_mask_active and !block_animation:
 		block_animation=true
@@ -173,9 +174,9 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 		for object in mask_visible:
 			object.visible=true
 		
-		var object_mascara=await OBJECTS.instantiate()
-		sub_viewport_container.add_child(object_mascara)
-		object_mascara.active_object("Mascara")
+		
+		Dialogic.start("1_1")
+		
 		
 
 

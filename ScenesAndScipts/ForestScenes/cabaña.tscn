@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=4 uid="uid://b5vgm1emlol0h"]
+[gd_scene load_steps=191 format=4 uid="uid://b5vgm1emlol0h"]
 
 [ext_resource type="Texture2D" uid="uid://u8ah42ow5d0v" path="res://Assets/nuevosAssets/cabaña/cabin_in_the_forest_0.jpg" id="1_l007m"]
 [ext_resource type="Texture2D" uid="uid://c31sgimj8aqqk" path="res://Assets/nuevosAssets/cabaña/cabin_in_the_forest_1.png" id="2_6d7r4"]
@@ -41,8 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://dh1p0t856lcgu" path="res://Assets/nuevosAssets/sacrificial_altar_2.png" id="39_ol00a"]
 [ext_resource type="Texture2D" uid="uid://sedfvubjksh8" path="res://Assets/nuevosAssets/sacrificial_altar_1.png" id="40_5jsfy"]
 [ext_resource type="Texture2D" uid="uid://dk7jdyynlf0ni" path="res://Assets/nuevosAssets/sacrificial_altar_3.png" id="41_04dai"]
-[ext_resource type="PackedScene" uid="uid://ymrb1qarit35" path="res://Assets/nuevosAssets/magic_staff.glb" id="44_5jsfy"]
-[ext_resource type="Script" uid="uid://bkcu5uihadxhk" path="res://ScenesAndScipts/knife.gd" id="45_04dai"]
+[ext_resource type="Script" uid="uid://bkcu5uihadxhk" path="res://ScenesAndScipts/Items/knife.gd" id="45_04dai"]
 [ext_resource type="Texture2D" uid="uid://dgtqva0hm08m1" path="res://Assets/nuevosAssets/knife_0.png" id="45_4nd3n"]
 [ext_resource type="Texture2D" uid="uid://x0h7if4ci8ix" path="res://Assets/nuevosAssets/knife_1.png" id="46_50nxq"]
 [ext_resource type="Texture2D" uid="uid://cmdlnfkiqmjx3" path="res://Assets/nuevosAssets/knife_2.png" id="47_bdre4"]
@@ -1894,9 +1893,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AltarDemon"]
 transform = Transform3D(9.999999, 0, 0, 0, 9.999999, -2.2204458e-15, 0, 2.2204458e-15, 9.999999, 0, -27.991056, 325.88965)
 shape = SubResource("ConvexPolygonShape3D_4nd3n")
-
-[node name="Baculo" parent="." instance=ExtResource("44_5jsfy")]
-transform = Transform3D(0.24520856, 0, -0.43574393, 0, 0.5, 0, 0.43574393, 0, 0.24520856, -1.9301519, 1.521071, -4.070092)
 
 [node name="Cuchillo" type="StaticBody3D" parent="."]
 transform = Transform3D(0.014712513, 0, -0.026144635, 0, 0.03, 0, 0.026144635, 0, 0.014712513, 0.29834712, 1.9436426, -3.9036894)

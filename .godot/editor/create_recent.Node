@@ -1,7 +1,10 @@
+CanvasLayer
+Timer
+CollisionShape3D
+Area3D
 Node
 Control
 Label
-CanvasLayer
 ColorRect
 AudioStreamPlayer2D
 TextureRect
@@ -9,7 +12,3 @@ Button
 SubViewportContainer
 SubViewport
 DirectionalLight3D
-Node3D
-Label3D
-AnimationPlayer
-Camera3D

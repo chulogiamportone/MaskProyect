@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmeqbwpnnoeev"]
+
+[ext_resource type="Shader" uid="uid://ba5la6x87q8ie" path="res://ScenesAndScipts/Shader/shy.gdshader" id="1_3j7tn"]
+[ext_resource type="Script" uid="uid://cktope5i48jr5" path="res://ScenesAndScipts/Envairoment/world_environment.gd" id="2_kbdlt"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j4hav"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yw6y6"]
+noise = SubResource("FastNoiseLite_j4hav")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yw6y6"]
+shader = ExtResource("1_3j7tn")
+shader_parameter/top_color = Color(0, 0, 0, 1)
+shader_parameter/cloud_color = Color(0.1, 0, 0.15, 1)
+shader_parameter/lightning_color = Color(0.8, 0.6, 1, 1)
+shader_parameter/vortex_size = 0.9900000095367401
+shader_parameter/cloud_texture = SubResource("NoiseTexture2D_yw6y6")
+shader_parameter/vortex_speed = 0.51600002451
+shader_parameter/lightning_strength = 0.010000000475
+shader_parameter/cloud_coverage = 0.800000038
+shader_parameter/horizon_color = Color(0, 0, 0.05, 1)
+shader_parameter/horizon_blur = 0.15
+
+[sub_resource type="Sky" id="Sky_k4701"]
+sky_material = SubResource("ShaderMaterial_yw6y6")
+
+[sub_resource type="Environment" id="Environment_5d3jg"]
+background_mode = 2
+sky = SubResource("Sky_k4701")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.2
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.05
+fog_light_color = Color(0.21740198, 0.23940593, 0.2736434, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.16206557, 0.1620656, 0.16206557, 1)
+volumetric_fog_emission = Color(0.34705478, 0.0004345244, 0.44595373, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_5d3jg")
+script = ExtResource("2_kbdlt")

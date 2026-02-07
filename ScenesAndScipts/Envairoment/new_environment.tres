@@ -1,0 +1,19 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://gxtygvmyqkkc"]
+
+[ext_resource type="Sky" uid="uid://bfr5t2dadf5k7" path="res://ScenesAndScipts/Envairoment/purple_sky.tres" id="1_40vc6"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_40vc6")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.2
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.05
+fog_light_color = Color(0.21740198, 0.23940593, 0.2736434, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.16206557, 0.1620656, 0.16206557, 1)
+volumetric_fog_emission = Color(0.34705478, 0.0004345244, 0.44595373, 1)

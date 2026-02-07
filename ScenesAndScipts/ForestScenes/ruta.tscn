@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpysqwau2fnh5"]
 
-[ext_resource type="Shader" uid="uid://c4j7tjvqisjan" path="res://ScenesAndScipts/ForestScenes/camino.gdshader" id="1_bgasv"]
+[ext_resource type="Shader" uid="uid://c4j7tjvqisjan" path="res://ScenesAndScipts/Shader/camino.gdshader" id="1_bgasv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_20nkk"]
 size = Vector2(3, 3)

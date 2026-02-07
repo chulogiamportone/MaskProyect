@@ -78,8 +78,7 @@ text = "Exit"
 
 [node name="Credits" type="TextureRect" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -108,4 +107,4 @@ autoplay = true
 [connection signal="pressed" from="Fondo/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Fondo/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Fondo/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Credits/Close" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Credits/Close" to="." method="_on_close_pressed"]

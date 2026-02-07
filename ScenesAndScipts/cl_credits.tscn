@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh123lpepp4qd"]
+
+[ext_resource type="PackedScene" uid="uid://dyesmdxo24pd7" path="res://ScenesAndScipts/credits.tscn" id="1_l561e"]
+
+[node name="Node2D" type="CanvasLayer"]
+
+[node name="Credits" parent="." instance=ExtResource("1_l561e")]
+visible = true
